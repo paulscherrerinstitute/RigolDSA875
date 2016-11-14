@@ -2,6 +2,7 @@
 #include <aSubRecord.h>
 #include <dbCommon.h>
 #include <recSup.h>
+#include <epicsTypes.h>
 #include <stdio.h>
 #include <math.h>
 
@@ -13,15 +14,15 @@ long calcXAxis(struct aSubRecord *prec){
 	inp D: type of input scale: linear (0) or logarithmic (1) 
 	*/
 
-	double step_size, freq_start, freq_stop, freq_curr, exponent, y_axis_size;
-	int x_type;
+	epicsFloat64 step_size, freq_start, freq_stop, freq_curr, exponent, y_axis_size;
+	epicsEnum16 x_type;
 
-	y_axis_size = ((double*)prec->a)[0];
-	freq_start = ((double*)prec->b)[0];
-	freq_stop = ((double*)prec->c)[0];
-	x_type = ((double*)prec->d)[0];
+	y_axis_size = ((epicsFloat64*)prec->a)[0];
+	freq_start = ((epicsFloat64*)prec->b)[0];
+	freq_stop = ((epicsFloat64*)prec->c)[0];
+	x_type = ((epicsFloat64*)prec->d)[0];
 
-	double* x_axis = (double*)prec->vala;
+	epicsFloat64* x_axis = (epicsFloat64*)prec->vala;
 	
 	int i;
 	if(x_type==1){ // log10
