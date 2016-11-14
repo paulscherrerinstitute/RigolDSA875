@@ -1,0 +1,19 @@
+file spectanly.template {
+pattern {SYS,    PORT}
+{       "$(S)", "$(STRM_PORT)"}
+}
+
+file trace.template {
+pattern {SYS,    PORT,           TRACE_ID }
+{       "$(S)", "$(STRM_PORT)",  "1"}
+{       "$(S)", "$(STRM_PORT)",  "2"}
+{       "$(S)", "$(STRM_PORT)",  "3"}
+}
+
+file marker.template {
+pattern {SYS,    PORT,          MARKER_ID }
+{       "$(S)", "$(STRM_PORT)", "1"}
+{       "$(S)", "$(STRM_PORT)", "2"}
+{       "$(S)", "$(STRM_PORT)", "3"}
+{       "$(S)", "$(STRM_PORT)", "4"}
+}

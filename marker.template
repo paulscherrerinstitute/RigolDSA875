@@ -1,0 +1,118 @@
+# When disabled amplitude zero is returned
+# Can be also enabled with $(SYS):M$(MARKER_ID)_TO_MAX
+record(bo, "$(SYS):M$(MARKER_ID)_ENA_SP")
+{
+    field(DTYP, "stream")
+    field(OUT, "@sa.prt sMEna($(MARKER_ID)) $(PORT)")
+    field(ZNAM, "Disable")
+    field(ONAM, "Enable")
+}
+
+# To reduce number of queries do one call for enabled and continous status check
+record(bi, "$(SYS):M$(MARKER_ID)_ENA")
+{
+    field(DTYP, "stream")
+    field(SCAN, "2 second")
+    field(INP, "@sa.prt gMsts($(MARKER_ID),$(SYS):M$(MARKER_ID)_CONT) $(PORT)")
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+    field(DISV, "0")
+    field(SDIS, "$(SYS):M$(MARKER_ID)_INHIBIT")
+}
+
+# Continously search for max peak
+record(bo, "$(SYS):M$(MARKER_ID)_CONT_SP")
+{
+    field(DTYP, "stream")
+    field(OUT, "@sa.prt sMCont($(MARKER_ID)) $(PORT)")
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+record(bi, "$(SYS):M$(MARKER_ID)_CONT")
+{
+    # Get value from ENA (enabled) record status check
+    field(ZNAM, "Off")
+    field(ONAM, "On")
+}
+
+# Set marker to frequency with maximum amplitude
+record(bo, "$(SYS):M$(MARKER_ID)_TO_MAX")
+{
+    field(DTYP, "stream")
+    field(OUT, "@sa.prt sMMode($(MARKER_ID),MAX) $(PORT)")
+}
+
+# Set marker to one peak left
+record(bo, "$(SYS):M$(MARKER_ID)_TO_LEFT")
+{
+    field(DTYP, "stream")
+    field(OUT, "@sa.prt sMMode($(MARKER_ID),LEFT) $(PORT)")
+}
+
+# Set marker to one peak right
+record(bo, "$(SYS):M$(MARKER_ID)_TO_RIGHT")
+{
+    field(DTYP, "stream")
+    field(OUT, "@sa.prt sMMode($(MARKER_ID),RIGH) $(PORT)")
+}
+
+record(mbbo, "$(SYS):M$(MARKER_ID)_TRACE_SP")
+{
+    field(DTYP, "stream")
+    field(OUT, "@sa.prt sMTrace$(MARKER_ID)) $(PORT)")
+    field(ZRST, "Trace 1")
+    field(ONST, "Trace 1")
+    field(TWST, "Trace 3")
+#    field(THST, "Trace 4") # Mathematical trace ... currently not supported
+}
+
+# Currently disabled since it does not work on Rigol DSA875
+#record(mbbi, "$(SYS):M$(MARKER_ID)_TRACE")
+#{
+#    field(DTYP, "stream")
+#    field(SCAN, "2 second")
+#    field(INP, "@sa.prt gMTrace($(MARKER_ID)) $(PORT)")
+#    field(ZRST, "Trace 1")
+#    field(ONST, "Trace 1")
+#    field(TWST, "Trace 3")
+#    field(THST, "Trace 4")
+#}
+
+
+#### Get peak coordinates
+# Reduce number of queries with one call for FREQ and AMP
+record(ai, "$(SYS):M$(MARKER_ID)_FREQ")
+{
+    field(DTYP, "stream")
+    field(SCAN, ".5 second")
+    field(INP, "@sa.prt gMpos($(MARKER_ID),$(SYS):M$(MARKER_ID)_AMP) $(PORT)")
+    field(DISV, "0")
+    field(SDIS, "$(SYS):M$(MARKER_ID)_INHIBIT")
+}
+
+
+record(ai, "$(SYS):M$(MARKER_ID)_AMP")
+{
+# Get data form FREQ record
+}
+
+record(bo, "$(SYS):M$(MARKER_ID)_FREQ_TO_CENT")
+{
+    field(DTYP, "stream")
+    field(OUT, "@sa.prt sM2Cent($(MARKER_ID)) $(PORT)")
+}
+
+
+## Enable marker settings and readouts
+
+### Enable/disable all readouts for marker settings to avoid unencecery communication
+# when marker is not needed
+record(bo, "$(SYS):M$(MARKER_ID)_INHIBIT")
+{
+    field(PINI, "1")
+    field(VAL, "0")
+    field(ZNAM, "Inhibit")
+    field(ONAM, "Use")
+    field(OUT, "$(SYS):M$(MARKER_ID)_ENA_SP")
+}

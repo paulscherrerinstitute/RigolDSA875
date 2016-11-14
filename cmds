@@ -1,0 +1,61 @@
+RIGOLO DS875
+
+1) Setup 1,2,3 traces
+:TRAC<n>:MODE <WRITe,MAXHold,MINHold,VIEW,BLANk,VIDeoavg,POWavg>
+
+Trace 4 is math operation trace (can only be set using other 3 traces)
+-> Will not be supported currently!
+
+2) Get trace(s)
+:TRAC:DATA? <TRACE1,TRACE2,TRACE3,TRACE4>
+
+3) Frequency
+:SENS:FREQ:CENT <freq_in_hz>  # 0 GHz to 7.5 Ghz
+:SENS:FREQ:OFFS <freq_in_hz>  # -100 GHz to 100 GHz
+// also way to settup span
+:SENS:FREQ:STAR <freq_in_hz>  # 0 GHz to 7.5 Ghz
+:SENS:FREQ:STOP <freq_in_hz>  # 0 GHz to 7.5 Ghz
+
+4) Span
+:SENS:FREQ:SPAN?
+:SENS:FREQ:SPAN <freq_in_hz>  # 0 GHz to 7.5 Ghz
+:SENS:FREQ:SPAN:FULL
+:SENS:FREQ:SPAN:PREV
+:SENS:FREQ:SPAN:ZIN
+:SENS:FREQ:SPAN:ZOUT
+
+5) Amplitude
+reference level and scale/div are Y axis display manegemt (range of Y axis) does not effect sent data no need to integration
+
+Ref offset ... effects sent data ...but probably more sensible to again use the function on client (caqtdm) side.
+in case of SCPI: :DISP:WIN:TRACE:Y:SCAL:RLEV:OFFS
+
+6) Max frequencies searches
+I have tired to use peaks table which can be read from the device using:
+:TRAC:MATH:PEAK:TABL:STAT 1
+:TRAC:MATH:PEAK:DATA?
+
+This approach should provide user with up to 10 peaks on trace 1 without any configuration. However it showed up that RIGOL DSA875 has a possible problems that in majority cases this command freezes the communication over LAN.
+
+Second approach is to support markers (4 are provided)
+
+Options:
+- Enable continuous peak search
+:CALC:MARK1:CPE // I guess this should be 1
+- select max peak
+:CALC:MARK1:MAX:MAX
+- slect left from current
+:CALC:MARK1:MAX:LEFT
+- select RIGHT from curretn
+:CALC:MARK1:MAX:RIGH
+- clear (disable) marker
+:CALC:MARK1:STAT 0
+- read marker frquency
+:CALC:MARK1:X?
+- read marker amplitude
+:CALC:MARK1:Y?
+
+- Set marker to specified trace
+:CALC:MARK1:TRAC 1
+- Get current trace
+:CALC:MARK1:TRAC?  //Rigold does not work with this (same as mode)

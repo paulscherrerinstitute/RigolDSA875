@@ -1,0 +1,140 @@
+record(ai, "$(SYS):SPAN")
+{
+    field(DTYP, "stream")
+    field(SCAN, "2 second")
+    field(INP, "@sa.prt gFreq(SPAN) $(PORT)")
+    field(EGU, "Hz")
+    field(PREC, "0")
+}
+
+record(ao, "$(SYS):SPAN_SP")
+{
+    field(DTYP, "stream")
+    field(OUT, "@sa.prt sFreq(SPAN) $(PORT)")
+    field(EGU, "Hz")
+    field(PREC, "0")
+}
+
+record(bo, "$(SYS):SPAN_FULL")
+{
+    field(DTYP, "stream")
+    field(OUT, "@sa.prt sSpanPred(FULL) $(PORT)")
+}
+
+record(bo, "$(SYS):SPAN_PREV")
+{
+    field(DTYP, "stream")
+    field(OUT, "@sa.prt sSpanPred(PREV) $(PORT)")
+}
+
+record(bo, "$(SYS):SPAN_ZIN")
+{
+    field(DTYP, "stream")
+    field(OUT, "@sa.prt sSpanPred(ZIN) $(PORT)")
+}
+record(bo, "$(SYS):SPAN_ZOUT")
+{
+    field(DTYP, "stream")
+    field(OUT, "@sa.prt sSpanPred(ZOUT) $(PORT)")
+}
+
+record(ai, "$(SYS):FREQ_CENTER")
+{
+    field(DTYP, "stream")
+    field(SCAN, "2 second")
+    field(INP, "@sa.prt gFreq(CENT) $(PORT)")
+    field(EGU, "Hz")
+    field(PREC, "0")
+    field(LOPR, "0")
+    field(HOPR, "7500000000")
+}
+
+record(ao, "$(SYS):FREQ_CENTER_SP")
+{
+    field(DTYP, "stream")
+    field(OUT, "@sa.prt sFreq(CENT) $(PORT)")
+    field(EGU, "Hz")
+    field(PREC, "0")
+    field(LOPR, "0")
+    field(HOPR, "7500000000")
+}
+
+record(ai, "$(SYS):FREQ_OFFSET")
+{
+    field(DTYP, "stream")
+    field(SCAN, "2 second")
+    field(INP, "@sa.prt gFreq(OFFS) $(PORT)")
+    field(EGU, "Hz")
+    field(PREC, "0")
+    field(LOPR, "0")
+    field(HOPR, "100000000000")
+}
+
+record(ao, "$(SYS):FREQ_OFFSET_SP")
+{
+    field(DTYP, "stream")
+    field(OUT, "@sa.prt sFreq(OFFS) $(PORT)")
+    field(EGU, "Hz")
+    field(PREC, "0")
+    field(LOPR, "0")
+    field(HOPR, "100000000000")
+}
+
+record(ai, "$(SYS):FREQ_START")
+{
+    field(DTYP, "stream")
+    field(SCAN, "2 second")
+    field(INP, "@sa.prt gFreq(STAR) $(PORT)")
+    field(EGU, "Hz")
+    field(PREC, "0")
+    field(LOPR, "0")
+    field(HOPR, "7500000000")
+}
+
+record(ao, "$(SYS):FREQ_START_SP")
+{
+    field(DTYP, "stream")
+    field(OUT, "@sa.prt sFreq(STAR) $(PORT)")
+    field(EGU, "Hz")
+    field(PREC, "0")
+    field(LOPR, "0")
+    field(HOPR, "7500000000")
+}
+
+record(ai, "$(SYS):FREQ_STOP")
+{
+    field(DTYP, "stream")
+    field(SCAN, "2 second")
+    field(INP, "@sa.prt gFreq(STOP) $(PORT)")
+    field(EGU, "Hz")
+    field(PREC, "0")
+    field(LOPR, "0")
+    field(HOPR, "7500000000")
+}
+
+record(ao, "$(SYS):FREQ_STOP_SP")
+{
+    field(DTYP, "stream")
+    field(OUT, "@sa.prt sFreq(STOP) $(PORT)")
+    field(EGU, "Hz")
+    field(PREC, "0")
+    field(LOPR, "0")
+    field(HOPR, "7500000000")
+}
+
+record(bi, "$(SYS):X_TYPE")
+{
+    field(DTYP, "stream")
+    field(SCAN, "2 second")
+    field(INP, "@sa.prt gXTyp() $(PORT)")
+    field(ZNAM, "Linear")
+    field(ONAM, "Log10")
+}
+
+record(bo, "$(SYS):X_TYPE_SP")
+{
+    field(DTYP, "stream")
+    field(OUT, "@sa.prt sXTyp() $(PORT)")
+    field(ZNAM, "Linear")
+    field(ONAM, "Log10")
+}

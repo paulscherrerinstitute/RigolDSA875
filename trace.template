@@ -1,0 +1,71 @@
+record(mbbo, "$(SYS):T$(TRACE_ID)_MODE_SP")
+{
+    field(DTYP, "stream")
+    field(OUT, "@sa.prt sTMode($(TRACE_ID)) $(PORT)")
+    field(ZRST, "Blank")
+    field(ONST, "Clear Write")
+    field(TWST, "Max Hold")
+    field(THST, "Min Hold")
+    field(FRST, "Freeze")
+    field(FVST, "Video Avg")
+    field(SXST, "Power Avg")
+}
+
+#record(mbbi, "$(SYS):T$(TRACE_ID)_MODE")
+#{
+#    field(DTYP, "stream")
+#    field(SCAN, "2 second")
+#    field(INP, "@sa.prt gTMode($(TRACE_ID)) $(PORT)")
+#    field(ZRST, "Blank")
+#    field(ONST, "Clear Write")
+#    field(TWST, "Max Hold")
+#    field(THST, "Min Hold")
+#    field(FRST, "Freeze")
+#    field(FVST, "Video Avg")
+#    field(SXST, "Power Avg")
+#}
+
+record(waveform, "$(SYS):T$(TRACE_ID)_DATA")
+{
+    field(DTYP, "stream")
+    field(SCAN, ".5 second")
+    field(INP, "@sa.prt gTData($(TRACE_ID)) $(PORT)")
+    field(FTVL, "DOUBLE")
+    field(NELM, "1100")
+    field(DISV, "0")
+    field(SDIS, "$(SYS):T$(TRACE_ID)_INHIBIT")
+    field(FLNK, "$(SYS):T$(TRACE_ID)_FREQ_")
+}
+
+### Asub
+record(aSub, "$(SYS):T$(TRACE_ID)_FREQ_") {
+    field(SNAM,"calcXAxis")
+    field(FTVA,"DOUBLE")
+    field(FTVB,"DOUBLE")
+    field(FTVC,"DOUBLE")
+    field(FTVD,"CHAR")
+    field(INPA, "$(SYS):T$(TRACE_ID)_DATA.NORD")
+    field(INPB, "$(SYS):FREQ_START")
+    field(INPC, "$(SYS):FREQ_STOP")
+    field(INPD, "$(SYS):X_TYPE")
+    field(OUTA, "$(SYS):T$(TRACE_ID)_FREQ PP")
+    field(NOVA, "1100")
+}
+
+## Another copy of this array is neccecary because oly waveform has the option to
+# always put monitors (even if values didn't changed). This functionality is needed
+# by GUI.
+record(waveform, "$(SYS):T$(TRACE_ID)_FREQ")
+{
+    field(FTVL, "DOUBLE")
+    field(NELM, "1100")
+}
+
+### Enable/disable readout
+record(bo, "$(SYS):T$(TRACE_ID)_INHIBIT")
+{
+    field(PINI, "1")
+    field(VAL, "0")
+    field(ZNAM, "Inhibit")
+    field(ONAM, "Use")
+}

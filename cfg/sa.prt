@@ -1,0 +1,79 @@
+Terminator = LF;
+
+sendCmd{
+	out "%s";
+}
+
+sTMode{
+	out ":TRAC\$1:MODE %{BLAN|WRIT|MAXH|MINH|VIEW|VID|POW}";
+}
+
+gTMode{
+	out ":TRAC\$1:MODE?";
+	in "%{BLAN|WRIT|MAXH|MINH|VIEW|VID|POW}";
+}
+
+# predefined span
+sSpanPred{
+	out ":SENS:FREQ:SPAN:\$1";
+}
+
+gFreq{
+	out ":SENS:FREQ:\$1?";
+	in "%u";
+}
+
+sFreq{
+	out ":SENS:FREQ:\$1 %u";
+}
+
+sXTyp{
+	out ":DISP:WIN:TRAC:X:SCAL:SPAC %{LIN|LOG}";
+}
+
+gXTyp{
+	out ":DISP:WIN:TRAC:X:SCAL:SPAC?";
+	in "%{LIN|LOG}";
+}
+
+Separator="\_,\_";
+gTData{
+	out ":TRAC:DATA? TRACE\$1";
+	in "#9000009014\_%e";
+}
+
+sMMode{
+	out ":CALC:MARK\$1:MAX:\$2";
+}
+
+sMCont{
+	out ":CALC:MARK\$1:CPE %{0|1}";
+}
+
+gMPos{
+	out ":CALC:MARK\$1:X?;:CALC:MARK\$1:Y?";
+	in "%f;%(\$2)e"
+}
+
+sMEna{
+	out ":CALC:MARK\$1:STAT %{0|1}";
+}
+
+sMTrace{
+	out ":CALC:MARK\$1:TRAC %{1|2|3|4}";
+}
+
+gMTrace{
+	out ":CALC:MARK\$1:TRAC?";
+	in "%{1|2|3|4}";
+}
+
+sM2Cent{
+	out ":CALC:MARK\$1:PEAK:CF";
+}
+
+# Check if enabled and if continuous searching for peak
+gMSts{
+	out ":CALC:MARK\$1:STAT?;:CALC:MARK\$1:CPE?";
+	in "%{0|1};%(\$2){0|1}";
+}
