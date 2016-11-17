@@ -6,21 +6,24 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1057</width>
-    <height>457</height>
+    <width>1069</width>
+    <height>719</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="caCartesianPlot" name="cacartesianplot">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
-      <width>811</width>
-      <height>291</height>
+      <y>40</y>
+      <width>851</width>
+      <height>311</height>
      </rect>
     </property>
     <property name="TitleX">
@@ -30,7 +33,7 @@
      <string notr="true">power /dB</string>
     </property>
     <property name="channels_1" stdset="0">
-     <string>$(SYS):T1_FREQ;$(SYS):T1_DATA</string>
+     <string>$(SYS):T1_FREQ;$(SYS):T1_AMP</string>
     </property>
     <property name="Style_1">
      <enum>caCartesianPlot::ThinLines</enum>
@@ -43,7 +46,7 @@
      </color>
     </property>
     <property name="channels_2" stdset="0">
-     <string>$(SYS):T2_FREQ;$(SYS):T2_DATA</string>
+     <string>$(SYS):T2_FREQ;$(SYS):T2_AMP</string>
     </property>
     <property name="Style_2">
      <enum>caCartesianPlot::ThinLines</enum>
@@ -56,7 +59,7 @@
      </color>
     </property>
     <property name="channels_3" stdset="0">
-     <string>$(SYS):T3_FREQ;$(SYS):T3_DATA</string>
+     <string>$(SYS):T3_FREQ;$(SYS):T3_AMP</string>
     </property>
     <property name="Style_3">
      <enum>caCartesianPlot::ThinLines</enum>
@@ -69,18 +72,50 @@
      </color>
     </property>
     <property name="channels_4" stdset="0">
-     <string/>
+     <string>$(SYS):M1_FREQ;$(SYS):M1_AMP</string>
     </property>
     <property name="Style_4">
      <enum>caCartesianPlot::Dots</enum>
     </property>
     <property name="symbol_4">
-     <enum>caCartesianPlot::NoSymbol</enum>
+     <enum>caCartesianPlot::Ellipse</enum>
     </property>
     <property name="color_4">
      <color>
       <red>255</red>
-      <green>0</green>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+    </property>
+    <property name="channels_5" stdset="0">
+     <string>$(SYS):M2_FREQ;$(SYS):M2_AMP</string>
+    </property>
+    <property name="Style_5">
+     <enum>caCartesianPlot::NoCurve</enum>
+    </property>
+    <property name="symbol_5">
+     <enum>caCartesianPlot::Triangle</enum>
+    </property>
+    <property name="color_5">
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+    </property>
+    <property name="channels_6" stdset="0">
+     <string>$(SYS):M3_FREQ;$(SYS):M3_AMP</string>
+    </property>
+    <property name="Style_6">
+     <enum>caCartesianPlot::Dots</enum>
+    </property>
+    <property name="symbol_6">
+     <enum>caCartesianPlot::XCross</enum>
+    </property>
+    <property name="color_6">
+     <color>
+      <red>255</red>
+      <green>255</green>
       <blue>255</blue>
      </color>
     </property>
@@ -119,9 +154,9 @@
     </property>
     <property name="gridColor">
      <color>
-      <red>144</red>
-      <green>144</green>
-      <blue>147</blue>
+      <red>178</red>
+      <green>178</green>
+      <blue>178</blue>
      </color>
     </property>
     <property name="XaxisScaling" stdset="0">
@@ -140,9 +175,9 @@
    <widget class="caMessageButton" name="camessagebutton_5">
     <property name="geometry">
      <rect>
-      <x>830</x>
-      <y>271</y>
-      <width>221</width>
+      <x>870</x>
+      <y>320</y>
+      <width>191</width>
       <height>31</height>
      </rect>
     </property>
@@ -157,6 +192,9 @@
     </property>
     <property name="pressMessage">
      <string notr="true">1</string>
+    </property>
+    <property name="colorMode">
+     <enum>caMessageButton::Default</enum>
     </property>
    </widget>
    <widget class="caCalc" name="cacalc">
@@ -175,380 +213,230 @@
    <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
-      <x>830</x>
-      <y>10</y>
-      <width>221</width>
+      <x>870</x>
+      <y>40</y>
+      <width>191</width>
       <height>81</height>
      </rect>
     </property>
     <property name="title">
      <string>Trace 1</string>
     </property>
-    <widget class="caToggleButton" name="catogglebutton">
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>10</y>
-       <width>100</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Enable</string>
-     </property>
-     <property name="channel" stdset="0">
-      <string notr="true">$(SYS):T1_INHIBIT</string>
-     </property>
-    </widget>
     <widget class="caMenu" name="camenu">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>40</y>
-       <width>151</width>
-       <height>30</height>
+       <x>20</x>
+       <y>20</y>
+       <width>161</width>
+       <height>21</height>
       </rect>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(SYS):T1_MODE_SP</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_7">
+    <widget class="caGraphics" name="cagraphics_2">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>50</y>
-       <width>41</width>
-       <height>17</height>
+       <x>0</x>
+       <y>20</y>
+       <width>10</width>
+       <height>61</height>
       </rect>
      </property>
-     <property name="text">
-      <string>Mode</string>
+     <property name="foreground">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>0</blue>
+      </color>
+     </property>
+     <property name="fillstyle" stdset="0">
+      <enum>caGraphics::Filled</enum>
+     </property>
+     <property name="lineSize">
+      <number>1</number>
+     </property>
+     <property name="visibility">
+      <enum>caGraphics::StaticV</enum>
+     </property>
+     <property name="visibilityCalc">
+      <string notr="true"/>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true"/>
+     </property>
+    </widget>
+    <widget class="caLineEdit" name="calineedit_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>161</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):T1_MODE</string>
+     </property>
+     <property name="unitsEnabled">
+      <bool>false</bool>
      </property>
     </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_4">
     <property name="geometry">
      <rect>
-      <x>830</x>
-      <y>90</y>
-      <width>221</width>
+      <x>870</x>
+      <y>130</y>
+      <width>191</width>
       <height>81</height>
      </rect>
     </property>
     <property name="title">
      <string>Trace 2</string>
     </property>
-    <widget class="caToggleButton" name="catogglebutton_2">
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>10</y>
-       <width>100</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Enable</string>
-     </property>
-     <property name="channel" stdset="0">
-      <string notr="true">$(SYS):T2_INHIBIT</string>
-     </property>
-    </widget>
     <widget class="caMenu" name="camenu_2">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>40</y>
-       <width>151</width>
-       <height>30</height>
+       <x>20</x>
+       <y>20</y>
+       <width>161</width>
+       <height>21</height>
       </rect>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(SYS):T2_MODE_SP</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_8">
+    <widget class="caGraphics" name="cagraphics_3">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>50</y>
-       <width>41</width>
-       <height>17</height>
+       <x>0</x>
+       <y>20</y>
+       <width>10</width>
+       <height>61</height>
       </rect>
      </property>
-     <property name="text">
-      <string>Mode</string>
+     <property name="foreground">
+      <color>
+       <red>255</red>
+       <green>0</green>
+       <blue>255</blue>
+      </color>
+     </property>
+     <property name="fillstyle" stdset="0">
+      <enum>caGraphics::Filled</enum>
+     </property>
+     <property name="lineSize">
+      <number>1</number>
+     </property>
+     <property name="visibility">
+      <enum>caGraphics::StaticV</enum>
+     </property>
+     <property name="visibilityCalc">
+      <string notr="true"/>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true"/>
+     </property>
+    </widget>
+    <widget class="caLineEdit" name="calineedit_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>161</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):T2_MODE</string>
+     </property>
+     <property name="unitsEnabled">
+      <bool>false</bool>
      </property>
     </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_5">
     <property name="geometry">
      <rect>
-      <x>830</x>
-      <y>180</y>
-      <width>221</width>
+      <x>870</x>
+      <y>220</y>
+      <width>191</width>
       <height>81</height>
      </rect>
     </property>
     <property name="title">
      <string>Trace 3</string>
     </property>
-    <widget class="caToggleButton" name="catogglebutton_3">
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>10</y>
-       <width>100</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Enable</string>
-     </property>
-     <property name="channel" stdset="0">
-      <string notr="true">$(SYS):T3_INHIBIT</string>
-     </property>
-    </widget>
     <widget class="caMenu" name="camenu_3">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>40</y>
-       <width>151</width>
-       <height>30</height>
+       <x>20</x>
+       <y>20</y>
+       <width>161</width>
+       <height>21</height>
       </rect>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(SYS):T3_MODE_SP</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_9">
+    <widget class="caGraphics" name="cagraphics_4">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>50</y>
-       <width>41</width>
-       <height>17</height>
+       <x>0</x>
+       <y>20</y>
+       <width>10</width>
+       <height>61</height>
       </rect>
      </property>
-     <property name="text">
-      <string>Mode</string>
+     <property name="foreground">
+      <color>
+       <red>0</red>
+       <green>255</green>
+       <blue>255</blue>
+      </color>
      </property>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="groupBox_6">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>510</y>
-      <width>181</width>
-      <height>231</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>Peak 1</string>
-    </property>
-    <widget class="caMessageButton" name="camessagebutton_6">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>160</y>
-       <width>121</width>
-       <height>22</height>
-      </rect>
+     <property name="fillstyle" stdset="0">
+      <enum>caGraphics::Filled</enum>
      </property>
-     <property name="channel" stdset="0">
-      <string notr="true">$(SYS):M1_ENA_SP</string>
-     </property>
-     <property name="label">
-      <string notr="true">Clear</string>
-     </property>
-     <property name="pressMessage">
-      <string notr="true">0</string>
-     </property>
-    </widget>
-    <widget class="caMessageButton" name="camessagebutton_7">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>90</y>
-       <width>121</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Set to Max</string>
-     </property>
-     <property name="channel" stdset="0">
-      <string notr="true">$(SYS):M1_TO_MAX</string>
-     </property>
-     <property name="label">
-      <string notr="true">Clear</string>
-     </property>
-     <property name="pressMessage">
-      <string notr="true">0</string>
-     </property>
-    </widget>
-    <widget class="caMessageButton" name="camessagebutton_8">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>110</y>
-       <width>61</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Left</string>
-     </property>
-     <property name="channel" stdset="0">
-      <string notr="true">$(SYS):M1_TO_LEFT</string>
-     </property>
-     <property name="label">
-      <string notr="true">Clear</string>
-     </property>
-     <property name="pressMessage">
-      <string notr="true">0</string>
-     </property>
-    </widget>
-    <widget class="caMessageButton" name="camessagebutton_9">
-     <property name="geometry">
-      <rect>
-       <x>70</x>
-       <y>110</y>
-       <width>61</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Right</string>
-     </property>
-     <property name="channel" stdset="0">
-      <string notr="true">$(SYS):M1_TO_RIGHT</string>
-     </property>
-     <property name="label">
-      <string notr="true">Clear</string>
-     </property>
-     <property name="pressMessage">
-      <string notr="true">0</string>
-     </property>
-    </widget>
-    <widget class="caLineEdit" name="calineedit_6">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>30</y>
-       <width>100</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="channel" stdset="0">
-      <string notr="true">$(SYS):M1_FREQ</string>
-     </property>
-    </widget>
-    <widget class="caLineEdit" name="calineedit_7">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>60</y>
-       <width>100</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="channel" stdset="0">
-      <string notr="true">$(SYS):M1_AMP</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_5">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>30</y>
-       <width>21</width>
-       <height>17</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>X</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_6">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>60</y>
-       <width>21</width>
-       <height>17</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Y</string>
-     </property>
-    </widget>
-    <widget class="caChoice" name="cachoice_2">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>130</y>
-       <width>121</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="channel" stdset="0">
-      <string notr="true">$(SYS):M1_CONT_SP</string>
-     </property>
-     <property name="stackingMode" stdset="0">
-      <enum>caChoice::Column</enum>
-     </property>
-     <property name="endBit">
+     <property name="lineSize">
       <number>1</number>
      </property>
+     <property name="visibility">
+      <enum>caGraphics::StaticV</enum>
+     </property>
+     <property name="visibilityCalc">
+      <string notr="true"/>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true"/>
+     </property>
     </widget>
-    <widget class="caMessageButton" name="camessagebutton_10">
+    <widget class="caLineEdit" name="calineedit_4">
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>200</y>
-       <width>121</width>
-       <height>22</height>
+       <y>50</y>
+       <width>161</width>
+       <height>20</height>
       </rect>
      </property>
-     <property name="text">
-      <string>Set as CF</string>
-     </property>
      <property name="channel" stdset="0">
-      <string notr="true">$(SYS):M1_FREQ_TO_CENT</string>
+      <string notr="true">$(SYS):T3_MODE</string>
      </property>
-     <property name="label">
-      <string notr="true">Clear</string>
-     </property>
-     <property name="pressMessage">
-      <string notr="true">0</string>
-     </property>
-    </widget>
-    <widget class="caToggleButton" name="catogglebutton_4">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>0</y>
-       <width>100</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Enable</string>
-     </property>
-     <property name="channel" stdset="0">
-      <string notr="true">$(SYS):M1_INHIBIT</string>
+     <property name="unitsEnabled">
+      <bool>true</bool>
      </property>
     </widget>
    </widget>
    <widget class="caToggleButton" name="catogglebutton_5">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>700</y>
+      <x>660</x>
+      <y>790</y>
       <width>100</width>
       <height>22</height>
      </rect>
@@ -563,8 +451,8 @@
    <widget class="caToggleButton" name="catogglebutton_6">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>700</y>
+      <x>810</x>
+      <y>790</y>
       <width>100</width>
       <height>22</height>
      </rect>
@@ -579,8 +467,8 @@
    <widget class="caToggleButton" name="catogglebutton_7">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>700</y>
+      <x>950</x>
+      <y>790</y>
       <width>100</width>
       <height>22</height>
      </rect>
@@ -595,9 +483,9 @@
    <widget class="QGroupBox" name="groupBox_7">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>310</y>
-      <width>1041</width>
+      <x>160</x>
+      <y>360</y>
+      <width>901</width>
       <height>121</height>
      </rect>
     </property>
@@ -627,7 +515,7 @@
       </rect>
      </property>
      <property name="channel" stdset="0">
-      <string notr="true">$(SYS):FREQ_CENTER_SP.EGU</string>
+      <string notr="true">$(SYS):FREQ_CENTER</string>
      </property>
      <property name="unitsEnabled">
       <bool>true</bool>
@@ -636,7 +524,7 @@
     <widget class="QLabel" name="label_11">
      <property name="geometry">
       <rect>
-       <x>430</x>
+       <x>400</x>
        <y>60</y>
        <width>41</width>
        <height>17</height>
@@ -649,7 +537,7 @@
     <widget class="caLineEdit" name="calineedit_9">
      <property name="geometry">
       <rect>
-       <x>630</x>
+       <x>600</x>
        <y>60</y>
        <width>131</width>
        <height>20</height>
@@ -665,7 +553,7 @@
     <widget class="caLineEdit" name="calineedit_10">
      <property name="geometry">
       <rect>
-       <x>630</x>
+       <x>600</x>
        <y>90</y>
        <width>131</width>
        <height>20</height>
@@ -681,7 +569,7 @@
     <widget class="QLabel" name="label_12">
      <property name="geometry">
       <rect>
-       <x>430</x>
+       <x>400</x>
        <y>90</y>
        <width>41</width>
        <height>20</height>
@@ -736,7 +624,7 @@
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>430</x>
+       <x>400</x>
        <y>30</y>
        <width>41</width>
        <height>17</height>
@@ -749,7 +637,7 @@
     <widget class="caTextEntry" name="catextentry">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>440</x>
        <y>30</y>
        <width>121</width>
        <height>22</height>
@@ -762,7 +650,7 @@
     <widget class="caLineEdit" name="calineedit">
      <property name="geometry">
       <rect>
-       <x>630</x>
+       <x>600</x>
        <y>30</y>
        <width>131</width>
        <height>20</height>
@@ -778,7 +666,7 @@
     <widget class="caTextEntry" name="catextentry_3">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>440</x>
        <y>60</y>
        <width>121</width>
        <height>22</height>
@@ -791,7 +679,7 @@
     <widget class="caTextEntry" name="catextentry_4">
      <property name="geometry">
       <rect>
-       <x>470</x>
+       <x>440</x>
        <y>90</y>
        <width>121</width>
        <height>22</height>
@@ -804,10 +692,10 @@
     <widget class="caMessageButton" name="camessagebutton_3">
      <property name="geometry">
       <rect>
-       <x>950</x>
-       <y>30</y>
-       <width>81</width>
-       <height>22</height>
+       <x>820</x>
+       <y>21</y>
+       <width>71</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -819,14 +707,17 @@
      <property name="pressMessage">
       <string notr="true">1</string>
      </property>
+     <property name="colorMode">
+      <enum>caMessageButton::Default</enum>
+     </property>
     </widget>
     <widget class="caMessageButton" name="camessagebutton_4">
      <property name="geometry">
       <rect>
-       <x>870</x>
-       <y>30</y>
-       <width>81</width>
-       <height>22</height>
+       <x>750</x>
+       <y>21</y>
+       <width>71</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -838,14 +729,17 @@
      <property name="pressMessage">
       <string notr="true">1</string>
      </property>
+     <property name="colorMode">
+      <enum>caMessageButton::Default</enum>
+     </property>
     </widget>
     <widget class="caMessageButton" name="camessagebutton">
      <property name="geometry">
       <rect>
-       <x>870</x>
-       <y>60</y>
-       <width>161</width>
-       <height>22</height>
+       <x>750</x>
+       <y>51</y>
+       <width>141</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -857,14 +751,17 @@
      <property name="pressMessage">
       <string notr="true">1</string>
      </property>
+     <property name="colorMode">
+      <enum>caMessageButton::Default</enum>
+     </property>
     </widget>
     <widget class="caMessageButton" name="camessagebutton_2">
      <property name="geometry">
       <rect>
-       <x>870</x>
-       <y>90</y>
-       <width>161</width>
-       <height>22</height>
+       <x>750</x>
+       <y>81</y>
+       <width>141</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
@@ -876,14 +773,17 @@
      <property name="pressMessage">
       <string notr="true">1</string>
      </property>
+     <property name="colorMode">
+      <enum>caMessageButton::Default</enum>
+     </property>
     </widget>
     <widget class="caChoice" name="cachoice">
      <property name="geometry">
       <rect>
        <x>90</x>
-       <y>90</y>
+       <y>85</y>
        <width>151</width>
-       <height>21</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="channel" stdset="0">
@@ -899,7 +799,7 @@
     <widget class="caTextEntry" name="catextentry_5">
      <property name="geometry">
       <rect>
-       <x>590</x>
+       <x>560</x>
        <y>30</y>
        <width>31</width>
        <height>22</height>
@@ -912,7 +812,7 @@
     <widget class="caTextEntry" name="catextentry_6">
      <property name="geometry">
       <rect>
-       <x>590</x>
+       <x>560</x>
        <y>60</y>
        <width>31</width>
        <height>22</height>
@@ -925,7 +825,7 @@
     <widget class="caTextEntry" name="catextentry_7">
      <property name="geometry">
       <rect>
-       <x>590</x>
+       <x>560</x>
        <y>90</y>
        <width>31</width>
        <height>22</height>
@@ -948,6 +848,253 @@
       <string notr="true">$(SYS):SPAN_SP.EGU</string>
      </property>
     </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>301</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <italic>true</italic>
+      </font>
+     </property>
+     <property name="text">
+      <string>Scale type must match X scale type of the plot.</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>490</y>
+      <width>351</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Marker 1</string>
+    </property>
+    <widget class="caInclude" name="cainclude">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>341</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="macro">
+      <string>SYS=$(SYS),M_ID=1</string>
+     </property>
+     <property name="filename" stdset="0">
+      <string notr="true">SpectrumAnalyzer_marker.ui</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>490</y>
+      <width>351</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Marker 2</string>
+    </property>
+    <widget class="caInclude" name="cainclude_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>341</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="macro">
+      <string>SYS=$(SYS),M_ID=2</string>
+     </property>
+     <property name="filename" stdset="0">
+      <string notr="true">SpectrumAnalyzer_marker.ui</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_6">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>490</y>
+      <width>351</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Marker 3</string>
+    </property>
+    <widget class="caInclude" name="cainclude_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>341</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="macro">
+      <string>SYS=$(SYS),M_ID=3</string>
+     </property>
+     <property name="filename" stdset="0">
+      <string notr="true">SpectrumAnalyzer_marker.ui</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_8">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>420</y>
+      <width>151</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Status</string>
+    </property>
+    <widget class="caRelatedDisplay" name="carelateddisplay">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="label">
+      <string notr="true">Errors &amp;&amp; Info</string>
+     </property>
+     <property name="labels">
+      <string>Errors &amp;&amp; Info</string>
+     </property>
+     <property name="files">
+      <string>SpectrumAnalyzer_info.ui</string>
+     </property>
+     <property name="args">
+      <string>SYS=$(SYS)</string>
+     </property>
+     <property name="stackingMode" stdset="0">
+      <enum>caRowColMenu::Menu</enum>
+     </property>
+    </widget>
+    <widget class="caGraphics" name="cagraphics">
+     <property name="geometry">
+      <rect>
+       <x>7</x>
+       <y>17</y>
+       <width>137</width>
+       <height>37</height>
+      </rect>
+     </property>
+     <property name="foreground">
+      <color>
+       <red>255</red>
+       <green>0</green>
+       <blue>0</blue>
+      </color>
+     </property>
+     <property name="fillstyle" stdset="0">
+      <enum>caGraphics::Filled</enum>
+     </property>
+     <property name="lineSize">
+      <number>3</number>
+     </property>
+     <property name="lineColor">
+      <color>
+       <red>255</red>
+       <green>0</green>
+       <blue>0</blue>
+      </color>
+     </property>
+     <property name="visibility">
+      <enum>caGraphics::IfNotZero</enum>
+     </property>
+     <property name="visibilityCalc">
+      <string notr="true"/>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):ERR_IN_Q</string>
+     </property>
+    </widget>
+    <zorder>cagraphics</zorder>
+    <zorder>carelateddisplay</zorder>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_9">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>360</y>
+      <width>151</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Default settings</string>
+    </property>
+    <widget class="caMessageButton" name="camessagebutton_6">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Preset</string>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):PRESET</string>
+     </property>
+     <property name="releaseMessage">
+      <string notr="true">0</string>
+     </property>
+     <property name="pressMessage">
+      <string notr="true">1</string>
+     </property>
+     <property name="colorMode">
+      <enum>caMessageButton::Default</enum>
+     </property>
+    </widget>
+   </widget>
+   <widget class="caLabel" name="calabel">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1071</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="statusTip">
+     <string>Expert</string>
+    </property>
+    <property name="text">
+     <string>$(SYS)</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="colorMode">
+     <enum>caLabel::Default</enum>
+    </property>
    </widget>
   </widget>
  </widget>
@@ -963,6 +1110,11 @@
    <header>caChoice</header>
   </customwidget>
   <customwidget>
+   <class>caRelatedDisplay</class>
+   <extends>QWidget</extends>
+   <header>caRelatedDisplay</header>
+  </customwidget>
+  <customwidget>
    <class>caTextEntry</class>
    <extends>caLineEdit</extends>
    <header>caTextEntry</header>
@@ -976,6 +1128,21 @@
    <class>caToggleButton</class>
    <extends>QCheckBox</extends>
    <header>caToggleButton</header>
+  </customwidget>
+  <customwidget>
+   <class>caLabel</class>
+   <extends>QLabel</extends>
+   <header>caLabel</header>
+  </customwidget>
+  <customwidget>
+   <class>caGraphics</class>
+   <extends>QWidget</extends>
+   <header>caGraphics</header>
+  </customwidget>
+  <customwidget>
+   <class>caInclude</class>
+   <extends>QWidget</extends>
+   <header>caInclude</header>
   </customwidget>
   <customwidget>
    <class>caLineEdit</class>

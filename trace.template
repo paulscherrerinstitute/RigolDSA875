@@ -11,29 +11,30 @@ record(mbbo, "$(SYS):T$(TRACE_ID)_MODE_SP")
     field(SXST, "Power Avg")
 }
 
-#record(mbbi, "$(SYS):T$(TRACE_ID)_MODE")
-#{
-#    field(DTYP, "stream")
-#    field(SCAN, "2 second")
-#    field(INP, "@sa.prt gTMode($(TRACE_ID)) $(PORT)")
-#    field(ZRST, "Blank")
-#    field(ONST, "Clear Write")
-#    field(TWST, "Max Hold")
-#    field(THST, "Min Hold")
-#    field(FRST, "Freeze")
-#    field(FVST, "Video Avg")
-#    field(SXST, "Power Avg")
-#}
+record(mbbi, "$(SYS):T$(TRACE_ID)_MODE")
+{
+    field(DTYP, "stream")
+    field(SCAN, "2 second")
+    field(INP, "@sa.prt gTMode($(TRACE_ID)) $(PORT)")
+    field(ZRST, "Blank")
+    field(ONST, "Clear Write")
+    field(TWST, "Max Hold")
+    field(THST, "Min Hold")
+    field(FRST, "Freeze")
+    field(FVST, "Video Avg")
+    field(SXST, "Power Avg")
+}
 
-record(waveform, "$(SYS):T$(TRACE_ID)_DATA")
+# When "BLANK" do not pull data
+record(waveform, "$(SYS):T$(TRACE_ID)_AMP")
 {
     field(DTYP, "stream")
     field(SCAN, ".5 second")
     field(INP, "@sa.prt gTData($(TRACE_ID)) $(PORT)")
     field(FTVL, "DOUBLE")
-    field(NELM, "1100")
+    field(NELM, "2000")
     field(DISV, "0")
-    field(SDIS, "$(SYS):T$(TRACE_ID)_INHIBIT")
+    field(SDIS, "$(SYS):T$(TRACE_ID)_MODE.VAL")
     field(FLNK, "$(SYS):T$(TRACE_ID)_FREQ_")
 }
 
@@ -44,7 +45,7 @@ record(aSub, "$(SYS):T$(TRACE_ID)_FREQ_") {
     field(FTVB,"DOUBLE")
     field(FTVC,"DOUBLE")
     field(FTVD,"CHAR")
-    field(INPA, "$(SYS):T$(TRACE_ID)_DATA.NORD")
+    field(INPA, "$(SYS):T$(TRACE_ID)_AMP.NORD")
     field(INPB, "$(SYS):FREQ_START")
     field(INPC, "$(SYS):FREQ_STOP")
     field(INPD, "$(SYS):X_TYPE")
@@ -52,20 +53,11 @@ record(aSub, "$(SYS):T$(TRACE_ID)_FREQ_") {
     field(NOVA, "1100")
 }
 
-## Another copy of this array is neccecary because oly waveform has the option to
+## Another copy of this array is necessary because only waveform has the option to
 # always put monitors (even if values didn't changed). This functionality is needed
 # by GUI.
 record(waveform, "$(SYS):T$(TRACE_ID)_FREQ")
 {
     field(FTVL, "DOUBLE")
     field(NELM, "1100")
-}
-
-### Enable/disable readout
-record(bo, "$(SYS):T$(TRACE_ID)_INHIBIT")
-{
-    field(PINI, "1")
-    field(VAL, "0")
-    field(ZNAM, "Inhibit")
-    field(ONAM, "Use")
 }

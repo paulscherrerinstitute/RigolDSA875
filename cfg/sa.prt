@@ -1,4 +1,5 @@
 Terminator = LF;
+Timeout = 1000;
 
 sendCmd{
 	out "%s";
@@ -6,14 +7,14 @@ sendCmd{
 
 sTMode{
 	out ":TRAC\$1:MODE %{BLAN|WRIT|MAXH|MINH|VIEW|VID|POW}";
+	@init {	out ":TRAC\$1:MODE?;*OPC?"; in ";%{BLAN|WRIT|MAXH|MINH|VIEW|VID|POW};%*{0|1}";}
 }
 
 gTMode{
-	out ":TRAC\$1:MODE?";
-	in "%{BLAN|WRIT|MAXH|MINH|VIEW|VID|POW}";
+	out ":TRAC\$1:MODE?;*OPC?";
+	in ";%{BLAN|WRIT|MAXH|MINH|VIEW|VID|POW};%*{0|1}";
 }
 
-# predefined span
 sSpanPred{
 	out ":SENS:FREQ:SPAN:\$1";
 }
@@ -25,6 +26,7 @@ gFreq{
 
 sFreq{
 	out ":SENS:FREQ:\$1 %u";
+	@init {out ":SENS:FREQ:\$1?"; in "%u";}
 }
 
 sXTyp{
@@ -36,10 +38,10 @@ gXTyp{
 	in "%{LIN|LOG}";
 }
 
-Separator="\_,\_";
 gTData{
+	separator="\_,\_";
 	out ":TRAC:DATA? TRACE\$1";
-	in "#9000009014\_%e";
+	in "#%*d\_%e";
 }
 
 sMMode{
@@ -48,6 +50,7 @@ sMMode{
 
 sMCont{
 	out ":CALC:MARK\$1:CPE %{0|1}";
+	@init {out ":CALC:MARK\$1:CPE?"; in "%{0|1}";}
 }
 
 gMPos{
@@ -57,23 +60,54 @@ gMPos{
 
 sMEna{
 	out ":CALC:MARK\$1:STAT %{0|1}";
+	@init {out ":CALC:MARK\$1:STAT?"; in "%{0|1}";}
 }
 
 sMTrace{
 	out ":CALC:MARK\$1:TRAC %{1|2|3|4}";
+	@init{out ":CALC:MARK\$1:TRAC?;*OPC?"; in ";%{1|2|3|4};%*{0|1}";}
 }
 
 gMTrace{
-	out ":CALC:MARK\$1:TRAC?";
-	in "%{1|2|3|4}";
+	out ":CALC:MARK\$1:TRAC?;*OPC?";
+	in ";%{1|2|3|4};%*{0|1}";
 }
+
 
 sM2Cent{
 	out ":CALC:MARK\$1:PEAK:CF";
 }
 
-# Check if enabled and if continuous searching for peak
+
 gMSts{
 	out ":CALC:MARK\$1:STAT?;:CALC:MARK\$1:CPE?";
 	in "%{0|1};%(\$2){0|1}";
+}
+
+gDevID{
+	out "*IDN?";
+	in "%#s";
+}
+
+gDevIP{
+	out ":SYST:COMM:LAN:IP:ADD?";
+	in "%#s";
+}
+
+reset{
+	out "*RST";
+}
+
+gSTB{
+	out "*STB?;*WAI";
+	in "%d";
+}
+
+gErr{
+	out ":SYST:ERR?";
+	in "%#s";
+}
+
+clrErrQ{
+	out "*CLS;*WAI"
 }

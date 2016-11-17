@@ -1,3 +1,14 @@
+record(bo, "$(SYS):PRESET")
+{
+    field(DTYP, "stream")
+    field(OUT, "@sa.prt reset() $(PORT)")
+}
+
+
+##############
+# Frequency span settings
+##############
+
 record(ai, "$(SYS):SPAN")
 {
     field(DTYP, "stream")
@@ -38,6 +49,9 @@ record(bo, "$(SYS):SPAN_ZOUT")
     field(OUT, "@sa.prt sSpanPred(ZOUT) $(PORT)")
 }
 
+#############
+# Frequency settings
+#############
 record(ai, "$(SYS):FREQ_CENTER")
 {
     field(DTYP, "stream")
@@ -122,6 +136,9 @@ record(ao, "$(SYS):FREQ_STOP_SP")
     field(HOPR, "7500000000")
 }
 
+##############
+# Type of X (FREQ) axis
+##############
 record(bi, "$(SYS):X_TYPE")
 {
     field(DTYP, "stream")
@@ -138,3 +155,65 @@ record(bo, "$(SYS):X_TYPE_SP")
     field(ZNAM, "Linear")
     field(ONAM, "Log10")
 }
+
+
+##############
+# Statuses and error handling
+##############
+## Error checking works in following way:
+#  Read event status register (*ESR?) and check if there are errors (2nd bit is 1)
+#  When ESR is read it is automatically reset to 0!
+#  Errors in the queue can then be read using :SYS:ERR? ("FILO" register)
+#
+# EPICS implementation:
+# Pull ESR status. When second bit not 0, set error status to 1
+# When statuses are cleared with *CLS or the last error was read from the error queue
+# set error PV to 0
+
+record(mbbiDirect, "$(SYS):STB_STS")
+{
+    field(DTYP, "stream")
+    field(SCAN, "2 second")
+    field(INP, "@sa.prt gSTB() $(PORT)")
+    field(PINI, "1")
+    field(FLNK, "$(SYS):ERR_IN_Q")
+}
+
+# 2nd bit of STB register indicates that errors are in the queue
+record(calc, "$(SYS):ERR_IN_Q")
+{
+    field(INPA, "$(SYS):STB_STS.B2")
+    field(CALC, "A>0")
+}
+
+record(bo, "$(SYS):CLEAR_ERR")
+{
+    field(DTYP, "stream")
+    field(OUT, "@sa.prt clrErrQ() $(PORT)")
+    field(FLNK, "$(SYS):ERR_MSG")
+}
+
+record(waveform, "$(SYS):ERR_MSG")
+{   
+    field(DTYP, "stream")
+    field(INP, "@sa.prt gErr() $(PORT)")
+    field(FTVL, "CHAR")
+    field(NELM, "200")
+}
+
+record(waveform, "$(SYS):ID")
+{   
+    field(DTYP, "stream")
+    field(INP, "@sa.prt gDevID() $(PORT)")
+    field(PINI, "1")
+    field(FTVL, "CHAR")
+    field(NELM, "200")
+}
+
+record(stringin, "$(SYS):IP")
+{   
+    field(DTYP, "stream")
+    field(INP, "@sa.prt gDevIP() $(PORT)")
+    field(PINI, "1")
+}
+
