@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1069</width>
-    <height>719</height>
+    <width>1070</width>
+    <height>707</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -871,7 +871,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>490</y>
+      <y>480</y>
       <width>351</width>
       <height>221</height>
      </rect>
@@ -900,7 +900,7 @@
     <property name="geometry">
      <rect>
       <x>360</x>
-      <y>490</y>
+      <y>480</y>
       <width>351</width>
       <height>221</height>
      </rect>
@@ -929,7 +929,7 @@
     <property name="geometry">
      <rect>
       <x>710</x>
-      <y>490</y>
+      <y>480</y>
       <width>351</width>
       <height>221</height>
      </rect>
@@ -1096,6 +1096,86 @@
      <enum>caLabel::Default</enum>
     </property>
    </widget>
+   <widget class="caCalc" name="cacalc_2">
+    <property name="geometry">
+     <rect>
+      <x>1080</x>
+      <y>310</y>
+      <width>21</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="variable">
+     <string notr="true">$(SYS):GUI_M1_ID</string>
+    </property>
+    <property name="calc">
+     <string notr="true">1</string>
+    </property>
+    <property name="initialValue">
+     <double>1.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="caCalc" name="cacalc_3">
+    <property name="geometry">
+     <rect>
+      <x>1120</x>
+      <y>310</y>
+      <width>21</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="variable">
+     <string notr="true">$(SYS):GUI_M2_ID</string>
+    </property>
+    <property name="calc">
+     <string notr="true">2</string>
+    </property>
+    <property name="initialValue">
+     <double>2.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="caCalc" name="cacalc_4">
+    <property name="geometry">
+     <rect>
+      <x>1150</x>
+      <y>310</y>
+      <width>21</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="variable">
+     <string notr="true">$(SYS):GUI_M3_ID</string>
+    </property>
+    <property name="calc">
+     <string notr="true">3</string>
+    </property>
+    <property name="initialValue">
+     <double>3.000000000000000</double>
+    </property>
+    <property name="precision">
+     <number>1</number>
+    </property>
+   </widget>
+   <zorder>cacartesianplot</zorder>
+   <zorder>camessagebutton_5</zorder>
+   <zorder>cacalc</zorder>
+   <zorder>groupBox_3</zorder>
+   <zorder>groupBox_4</zorder>
+   <zorder>groupBox_5</zorder>
+   <zorder>catogglebutton_5</zorder>
+   <zorder>catogglebutton_6</zorder>
+   <zorder>catogglebutton_7</zorder>
+   <zorder>groupBox</zorder>
+   <zorder>groupBox_2</zorder>
+   <zorder>groupBox_6</zorder>
+   <zorder>groupBox_8</zorder>
+   <zorder>groupBox_9</zorder>
+   <zorder>calabel</zorder>
+   <zorder>groupBox_7</zorder>
+   <zorder>caframe_4</zorder>
+   <zorder>cacalc_2</zorder>
+   <zorder>cacalc_3</zorder>
+   <zorder>cacalc_4</zorder>
   </widget>
  </widget>
  <customwidgets>
