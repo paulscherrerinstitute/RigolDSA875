@@ -1,7 +1,7 @@
 record(mbbo, "$(SYS):T$(TRACE_ID)_MODE_SP")
 {
     field(DTYP, "stream")
-    field(OUT, "@sa.prt sTMode($(TRACE_ID)) $(PORT)")
+    field(OUT, "@dsa875.p sTMode($(TRACE_ID)) $(PORT)")
     field(ZRST, "Blank")
     field(ONST, "Clear Write")
     field(TWST, "Max Hold")
@@ -15,7 +15,7 @@ record(mbbi, "$(SYS):T$(TRACE_ID)_MODE")
 {
     field(DTYP, "stream")
     field(SCAN, "2 second")
-    field(INP, "@sa.prt gTMode($(TRACE_ID)) $(PORT)")
+    field(INP, "@dsa875.p gTMode($(TRACE_ID)) $(PORT)")
     field(ZRST, "Blank")
     field(ONST, "Clear Write")
     field(TWST, "Max Hold")
@@ -23,18 +23,25 @@ record(mbbi, "$(SYS):T$(TRACE_ID)_MODE")
     field(FRST, "Freeze")
     field(FVST, "Video Avg")
     field(SXST, "Power Avg")
+    field(FLNK, "$(SYS):T$(TRACE_ID)_PULL_")
 }
 
 # When "BLANK" do not pull data
+record(calc, "$(SYS):T$(TRACE_ID)_PULL_")
+{
+    field(CALC, "A==0")
+    field(INPA, "$(SYS):T$(TRACE_ID)_MODE")
+}
+
 record(waveform, "$(SYS):T$(TRACE_ID)_AMP")
 {
     field(DTYP, "stream")
     field(SCAN, ".5 second")
-    field(INP, "@sa.prt gTData($(TRACE_ID)) $(PORT)")
+    field(INP, "@dsa875.p gTData($(TRACE_ID)) $(PORT)")
     field(FTVL, "DOUBLE")
     field(NELM, "2000")
-    field(DISV, "0")
-    field(SDIS, "$(SYS):T$(TRACE_ID)_MODE.VAL")
+    field(DISV, "1")
+    field(SDIS, "$(SYS):T$(TRACE_ID)_PULL_")
     field(FLNK, "$(SYS):T$(TRACE_ID)_FREQ_")
 }
 

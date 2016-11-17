@@ -1,7 +1,7 @@
 record(bo, "$(SYS):PRESET")
 {
     field(DTYP, "stream")
-    field(OUT, "@sa.prt reset() $(PORT)")
+    field(OUT, "@dsa875.p reset() $(PORT)")
 }
 
 
@@ -13,7 +13,7 @@ record(ai, "$(SYS):SPAN")
 {
     field(DTYP, "stream")
     field(SCAN, "2 second")
-    field(INP, "@sa.prt gFreq(SPAN) $(PORT)")
+    field(INP, "@dsa875.p gFreq(SPAN) $(PORT)")
     field(EGU, "Hz")
     field(PREC, "0")
 }
@@ -21,7 +21,7 @@ record(ai, "$(SYS):SPAN")
 record(ao, "$(SYS):SPAN_SP")
 {
     field(DTYP, "stream")
-    field(OUT, "@sa.prt sFreq(SPAN) $(PORT)")
+    field(OUT, "@dsa875.p sFreq(SPAN) $(PORT)")
     field(EGU, "Hz")
     field(PREC, "0")
 }
@@ -29,24 +29,24 @@ record(ao, "$(SYS):SPAN_SP")
 record(bo, "$(SYS):SPAN_FULL")
 {
     field(DTYP, "stream")
-    field(OUT, "@sa.prt sSpanPred(FULL) $(PORT)")
+    field(OUT, "@dsa875.p sSpanPred(FULL) $(PORT)")
 }
 
 record(bo, "$(SYS):SPAN_PREV")
 {
     field(DTYP, "stream")
-    field(OUT, "@sa.prt sSpanPred(PREV) $(PORT)")
+    field(OUT, "@dsa875.p sSpanPred(PREV) $(PORT)")
 }
 
 record(bo, "$(SYS):SPAN_ZIN")
 {
     field(DTYP, "stream")
-    field(OUT, "@sa.prt sSpanPred(ZIN) $(PORT)")
+    field(OUT, "@dsa875.p sSpanPred(ZIN) $(PORT)")
 }
 record(bo, "$(SYS):SPAN_ZOUT")
 {
     field(DTYP, "stream")
-    field(OUT, "@sa.prt sSpanPred(ZOUT) $(PORT)")
+    field(OUT, "@dsa875.p sSpanPred(ZOUT) $(PORT)")
 }
 
 #############
@@ -56,7 +56,7 @@ record(ai, "$(SYS):FREQ_CENTER")
 {
     field(DTYP, "stream")
     field(SCAN, "2 second")
-    field(INP, "@sa.prt gFreq(CENT) $(PORT)")
+    field(INP, "@dsa875.p gFreq(CENT) $(PORT)")
     field(EGU, "Hz")
     field(PREC, "0")
     field(LOPR, "0")
@@ -66,7 +66,7 @@ record(ai, "$(SYS):FREQ_CENTER")
 record(ao, "$(SYS):FREQ_CENTER_SP")
 {
     field(DTYP, "stream")
-    field(OUT, "@sa.prt sFreq(CENT) $(PORT)")
+    field(OUT, "@dsa875.p sFreq(CENT) $(PORT)")
     field(EGU, "Hz")
     field(PREC, "0")
     field(LOPR, "0")
@@ -77,7 +77,7 @@ record(ai, "$(SYS):FREQ_OFFSET")
 {
     field(DTYP, "stream")
     field(SCAN, "2 second")
-    field(INP, "@sa.prt gFreq(OFFS) $(PORT)")
+    field(INP, "@dsa875.p gFreq(OFFS) $(PORT)")
     field(EGU, "Hz")
     field(PREC, "0")
     field(LOPR, "0")
@@ -87,7 +87,7 @@ record(ai, "$(SYS):FREQ_OFFSET")
 record(ao, "$(SYS):FREQ_OFFSET_SP")
 {
     field(DTYP, "stream")
-    field(OUT, "@sa.prt sFreq(OFFS) $(PORT)")
+    field(OUT, "@dsa875.p sFreq(OFFS) $(PORT)")
     field(EGU, "Hz")
     field(PREC, "0")
     field(LOPR, "0")
@@ -98,7 +98,7 @@ record(ai, "$(SYS):FREQ_START")
 {
     field(DTYP, "stream")
     field(SCAN, "2 second")
-    field(INP, "@sa.prt gFreq(STAR) $(PORT)")
+    field(INP, "@dsa875.p gFreq(STAR) $(PORT)")
     field(EGU, "Hz")
     field(PREC, "0")
     field(LOPR, "0")
@@ -108,7 +108,7 @@ record(ai, "$(SYS):FREQ_START")
 record(ao, "$(SYS):FREQ_START_SP")
 {
     field(DTYP, "stream")
-    field(OUT, "@sa.prt sFreq(STAR) $(PORT)")
+    field(OUT, "@dsa875.p sFreq(STAR) $(PORT)")
     field(EGU, "Hz")
     field(PREC, "0")
     field(LOPR, "0")
@@ -119,7 +119,7 @@ record(ai, "$(SYS):FREQ_STOP")
 {
     field(DTYP, "stream")
     field(SCAN, "2 second")
-    field(INP, "@sa.prt gFreq(STOP) $(PORT)")
+    field(INP, "@dsa875.p gFreq(STOP) $(PORT)")
     field(EGU, "Hz")
     field(PREC, "0")
     field(LOPR, "0")
@@ -129,7 +129,7 @@ record(ai, "$(SYS):FREQ_STOP")
 record(ao, "$(SYS):FREQ_STOP_SP")
 {
     field(DTYP, "stream")
-    field(OUT, "@sa.prt sFreq(STOP) $(PORT)")
+    field(OUT, "@dsa875.p sFreq(STOP) $(PORT)")
     field(EGU, "Hz")
     field(PREC, "0")
     field(LOPR, "0")
@@ -143,7 +143,7 @@ record(bi, "$(SYS):X_TYPE")
 {
     field(DTYP, "stream")
     field(SCAN, "2 second")
-    field(INP, "@sa.prt gXTyp() $(PORT)")
+    field(INP, "@dsa875.p gXTyp() $(PORT)")
     field(ZNAM, "Linear")
     field(ONAM, "Log10")
 }
@@ -151,7 +151,7 @@ record(bi, "$(SYS):X_TYPE")
 record(bo, "$(SYS):X_TYPE_SP")
 {
     field(DTYP, "stream")
-    field(OUT, "@sa.prt sXTyp() $(PORT)")
+    field(OUT, "@dsa875.p sXTyp() $(PORT)")
     field(ZNAM, "Linear")
     field(ONAM, "Log10")
 }
@@ -174,7 +174,7 @@ record(mbbiDirect, "$(SYS):STB_STS")
 {
     field(DTYP, "stream")
     field(SCAN, "2 second")
-    field(INP, "@sa.prt gSTB() $(PORT)")
+    field(INP, "@dsa875.p gSTB() $(PORT)")
     field(PINI, "1")
     field(FLNK, "$(SYS):ERR_IN_Q")
 }
@@ -189,14 +189,14 @@ record(calc, "$(SYS):ERR_IN_Q")
 record(bo, "$(SYS):CLEAR_ERR")
 {
     field(DTYP, "stream")
-    field(OUT, "@sa.prt clrErrQ() $(PORT)")
+    field(OUT, "@dsa875.p clrErrQ() $(PORT)")
     field(FLNK, "$(SYS):ERR_MSG")
 }
 
 record(waveform, "$(SYS):ERR_MSG")
 {   
     field(DTYP, "stream")
-    field(INP, "@sa.prt gErr() $(PORT)")
+    field(INP, "@dsa875.p gErr() $(PORT)")
     field(FTVL, "CHAR")
     field(NELM, "200")
 }
@@ -204,7 +204,7 @@ record(waveform, "$(SYS):ERR_MSG")
 record(waveform, "$(SYS):ID")
 {   
     field(DTYP, "stream")
-    field(INP, "@sa.prt gDevID() $(PORT)")
+    field(INP, "@dsa875.p gDevID() $(PORT)")
     field(PINI, "1")
     field(FTVL, "CHAR")
     field(NELM, "200")
@@ -213,7 +213,7 @@ record(waveform, "$(SYS):ID")
 record(stringin, "$(SYS):IP")
 {   
     field(DTYP, "stream")
-    field(INP, "@sa.prt gDevIP() $(PORT)")
+    field(INP, "@dsa875.p gDevIP() $(PORT)")
     field(PINI, "1")
 }
 

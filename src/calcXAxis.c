@@ -1,4 +1,5 @@
 #include <registryFunction.h>
+#include <epicsExport.h>
 #include <aSubRecord.h>
 #include <dbCommon.h>
 #include <recSup.h>

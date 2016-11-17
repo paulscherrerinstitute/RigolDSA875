@@ -6,7 +6,7 @@
 record(bo, "$(SYS):M$(MARKER_ID)_ENA_SP")
 {
     field(DTYP, "stream")
-    field(OUT, "@sa.prt sMEna($(MARKER_ID)) $(PORT)")
+    field(OUT, "@dsa875.p sMEna($(MARKER_ID)) $(PORT)")
     field(ZNAM, "Disable")
     field(ONAM, "Enable")
     field(FLNK, "$(SYS):M$(MARKER_ID)_TRACE_SP")
@@ -17,18 +17,18 @@ record(bi, "$(SYS):M$(MARKER_ID)_ENA")
 {
     field(DTYP, "stream")
     field(SCAN, "2 second")
-    field(INP, "@sa.prt gMsts($(MARKER_ID),$(SYS):M$(MARKER_ID)_CONT) $(PORT)")
+    field(INP, "@dsa875.p gMsts($(MARKER_ID),$(SYS):M$(MARKER_ID)_CONT) $(PORT)")
     field(ZNAM, "Disabled")
     field(ONAM, "Enabled")
 }
 
 
-# Set mode of continuously following the peak (Note, this setting effects all markers on RIGOL DSA875)
+# Set mode of continuously following the peak (Note, this setting effects all markers on RIGOL dsa875.p)
 
 record(bo, "$(SYS):M$(MARKER_ID)_CONT_SP")
 {
     field(DTYP, "stream")
-    field(OUT, "@sa.prt sMCont($(MARKER_ID)) $(PORT)")
+    field(OUT, "@dsa875.p sMCont($(MARKER_ID)) $(PORT)")
     field(ZNAM, "Off")
     field(ONAM, "On")
     field(VAL, "0")
@@ -45,27 +45,27 @@ record(bi, "$(SYS):M$(MARKER_ID)_CONT")
 record(bo, "$(SYS):M$(MARKER_ID)_TO_MAX")
 {
     field(DTYP, "stream")
-    field(OUT, "@sa.prt sMMode($(MARKER_ID),MAX) $(PORT)")
+    field(OUT, "@dsa875.p sMMode($(MARKER_ID),MAX) $(PORT)")
 }
 
 # Set marker to one peak left
 record(bo, "$(SYS):M$(MARKER_ID)_TO_LEFT")
 {
     field(DTYP, "stream")
-    field(OUT, "@sa.prt sMMode($(MARKER_ID),LEFT) $(PORT)")
+    field(OUT, "@dsa875.p sMMode($(MARKER_ID),LEFT) $(PORT)")
 }
 
 # Set marker to one peak right
 record(bo, "$(SYS):M$(MARKER_ID)_TO_RIGHT")
 {
     field(DTYP, "stream")
-    field(OUT, "@sa.prt sMMode($(MARKER_ID),RIGH) $(PORT)")
+    field(OUT, "@dsa875.p sMMode($(MARKER_ID),RIGH) $(PORT)")
 }
 
 record(mbbo, "$(SYS):M$(MARKER_ID)_TRACE_SP")
 {
     field(DTYP, "stream")
-    field(OUT, "@sa.prt sMTrace($(MARKER_ID)) $(PORT)")
+    field(OUT, "@dsa875.p sMTrace($(MARKER_ID)) $(PORT)")
     field(ZRST, "Trace 1")
     field(ONST, "Trace 2")
     field(TWST, "Trace 3")
@@ -78,7 +78,7 @@ record(mbbi, "$(SYS):M$(MARKER_ID)_TRACE")
 {
     field(DTYP, "stream")
     field(SCAN, "2 second")
-    field(INP, "@sa.prt gMTrace($(MARKER_ID)) $(PORT)")
+    field(INP, "@dsa875.p gMTrace($(MARKER_ID)) $(PORT)")
     field(ZRST, "Trace 1")
     field(ONST, "Trace 2")
     field(TWST, "Trace 3")
@@ -93,7 +93,7 @@ record(ai, "$(SYS):M$(MARKER_ID)_FREQ")
     field(DTYP, "stream")
     field(SCAN, ".5 second")
     field(MDEL, "-1")
-    field(INP, "@sa.prt gMpos($(MARKER_ID),$(SYS):M$(MARKER_ID)_AMP) $(PORT)")
+    field(INP, "@dsa875.p gMpos($(MARKER_ID),$(SYS):M$(MARKER_ID)_AMP) $(PORT)")
     field(DISV, "0")
     field(SDIS, "$(SYS):M$(MARKER_ID)_ENA")
     field(EGU, "Hz")
@@ -110,5 +110,5 @@ record(ai, "$(SYS):M$(MARKER_ID)_AMP")
 record(bo, "$(SYS):M$(MARKER_ID)_FREQ_TO_CENT")
 {
     field(DTYP, "stream")
-    field(OUT, "@sa.prt sM2Cent($(MARKER_ID)) $(PORT)")
+    field(OUT, "@dsa875.p sM2Cent($(MARKER_ID)) $(PORT)")
 }

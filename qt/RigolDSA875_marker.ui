@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>336</width>
+    <height>186</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#Form{
+	background: rgba(225, 225, 225, 255);
+}</string>
+  </property>
+  <widget class="caToggleButton" name="catogglebutton_4">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>81</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Enable</string>
+   </property>
+   <property name="channel" stdset="0">
+    <string notr="true">$(SYS):M$(M_ID)_ENA_SP</string>
+   </property>
+  </widget>
+  <widget class="caFrame" name="caframe">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>40</y>
+     <width>331</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="visibility">
+    <enum>caFrame::IfNotZero</enum>
+   </property>
+   <property name="visibilityCalc">
+    <string notr="true">A</string>
+   </property>
+   <property name="channel" stdset="0">
+    <string notr="true">$(SYS):M$(M_ID)_ENA</string>
+   </property>
+   <widget class="caChoice" name="cachoice_2">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>70</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(SYS):M$(M_ID)_CONT_SP</string>
+    </property>
+    <property name="stackingMode" stdset="0">
+     <enum>caChoice::Column</enum>
+    </property>
+    <property name="endBit">
+     <number>1</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>40</y>
+      <width>41</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Amp</string>
+    </property>
+   </widget>
+   <widget class="caMessageButton" name="camessagebutton_7">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Max Peak</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(SYS):M$(M_ID)_TO_MAX</string>
+    </property>
+    <property name="label">
+     <string notr="true">Max Peak</string>
+    </property>
+    <property name="pressMessage">
+     <string notr="true">0</string>
+    </property>
+    <property name="colorMode">
+     <enum>caMessageButton::Default</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>0</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Freq</string>
+    </property>
+   </widget>
+   <widget class="caMessageButton" name="camessagebutton_9">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>30</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Right</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(SYS):M$(M_ID)_TO_RIGHT</string>
+    </property>
+    <property name="label">
+     <string notr="true">Right</string>
+    </property>
+    <property name="pressMessage">
+     <string notr="true">0</string>
+    </property>
+    <property name="colorMode">
+     <enum>caMessageButton::Default</enum>
+    </property>
+   </widget>
+   <widget class="caLineEdit" name="calineedit_7">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>40</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(SYS):M$(M_ID)_AMP</string>
+    </property>
+    <property name="unitsEnabled">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="caMessageButton" name="camessagebutton_11">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>30</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Left</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(SYS):M$(M_ID)_TO_LEFT</string>
+    </property>
+    <property name="label">
+     <string notr="true">Left</string>
+    </property>
+    <property name="pressMessage">
+     <string notr="true">0</string>
+    </property>
+    <property name="colorMode">
+     <enum>caMessageButton::Default</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>80</y>
+      <width>51</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Follow</string>
+    </property>
+   </widget>
+   <widget class="caLineEdit" name="calineedit_6">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>0</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(SYS):M$(M_ID)_FREQ</string>
+    </property>
+    <property name="unitsEnabled">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="caMessageButton" name="camessagebutton_10">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>111</y>
+      <width>331</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Set as CF</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(SYS):M$(M_ID)_FREQ_TO_CENT</string>
+    </property>
+    <property name="label">
+     <string notr="true">Set as CF</string>
+    </property>
+    <property name="pressMessage">
+     <string notr="true">0</string>
+    </property>
+    <property name="colorMode">
+     <enum>caMessageButton::Default</enum>
+    </property>
+   </widget>
+   <widget class="caLed" name="caled_2">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>70</y>
+      <width>21</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(SYS):M$(M_ID)_CONT</string>
+    </property>
+    <property name="trueColor">
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+   </widget>
+  </widget>
+  <widget class="caMenu" name="camenu_3">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>0</y>
+     <width>91</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string notr="true">$(SYS):M$(M_ID)_TRACE_SP</string>
+   </property>
+  </widget>
+  <widget class="caLineEdit" name="calineedit_8">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>0</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="channel" stdset="0">
+    <string notr="true">$(SYS):M$(M_ID)_TRACE</string>
+   </property>
+   <property name="unitsEnabled">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>3</y>
+     <width>21</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="caFrame" name="caframe_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>21</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="visibility">
+     <enum>caFrame::Calc</enum>
+    </property>
+    <property name="visibilityCalc">
+     <string notr="true">A==2</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(SYS):GUI_M$(M_ID)_ID</string>
+    </property>
+    <widget class="caGraphics" name="cagraphics_9">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="foreground">
+      <color>
+       <red>0</red>
+       <green>0</green>
+       <blue>0</blue>
+      </color>
+     </property>
+     <property name="fillstyle" stdset="0">
+      <enum>caGraphics::Filled</enum>
+     </property>
+     <property name="lineSize">
+      <number>1</number>
+     </property>
+     <property name="lineColor">
+      <color>
+       <red>0</red>
+       <green>0</green>
+       <blue>0</blue>
+      </color>
+     </property>
+     <property name="form">
+      <enum>caGraphics::Rectangle</enum>
+     </property>
+    </widget>
+    <widget class="caGraphics" name="cagraphics_6">
+     <property name="geometry">
+      <rect>
+       <x>2</x>
+       <y>2</y>
+       <width>16</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="foreground">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>255</blue>
+      </color>
+     </property>
+     <property name="fillstyle" stdset="0">
+      <enum>caGraphics::Filled</enum>
+     </property>
+     <property name="lineSize">
+      <number>1</number>
+     </property>
+     <property name="lineColor">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>255</blue>
+      </color>
+     </property>
+     <property name="form">
+      <enum>caGraphics::Triangle</enum>
+     </property>
+    </widget>
+   </widget>
+   <widget class="caFrame" name="caframe_4">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>21</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="visibility">
+     <enum>caFrame::Calc</enum>
+    </property>
+    <property name="visibilityCalc">
+     <string notr="true">A==3</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(SYS):GUI_M$(M_ID)_ID</string>
+    </property>
+    <widget class="caGraphics" name="cagraphics_8">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="foreground">
+      <color>
+       <red>0</red>
+       <green>0</green>
+       <blue>0</blue>
+      </color>
+     </property>
+     <property name="fillstyle" stdset="0">
+      <enum>caGraphics::Filled</enum>
+     </property>
+     <property name="lineSize">
+      <number>1</number>
+     </property>
+     <property name="lineColor">
+      <color>
+       <red>0</red>
+       <green>0</green>
+       <blue>0</blue>
+      </color>
+     </property>
+     <property name="form">
+      <enum>caGraphics::Rectangle</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: #FFFFFF;</string>
+     </property>
+     <property name="text">
+      <string>X</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="caFrame" name="caframe_3">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>21</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="visibility">
+     <enum>caFrame::Calc</enum>
+    </property>
+    <property name="visibilityCalc">
+     <string notr="true">A==1</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(SYS):GUI_M$(M_ID)_ID</string>
+    </property>
+    <widget class="caGraphics" name="cagraphics_7">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="foreground">
+      <color>
+       <red>0</red>
+       <green>0</green>
+       <blue>0</blue>
+      </color>
+     </property>
+     <property name="fillstyle" stdset="0">
+      <enum>caGraphics::Filled</enum>
+     </property>
+     <property name="lineSize">
+      <number>1</number>
+     </property>
+     <property name="lineColor">
+      <color>
+       <red>0</red>
+       <green>0</green>
+       <blue>0</blue>
+      </color>
+     </property>
+     <property name="form">
+      <enum>caGraphics::Rectangle</enum>
+     </property>
+    </widget>
+    <widget class="caGraphics" name="cagraphics_5">
+     <property name="geometry">
+      <rect>
+       <x>2</x>
+       <y>2</y>
+       <width>16</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="foreground">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>255</blue>
+      </color>
+     </property>
+     <property name="fillstyle" stdset="0">
+      <enum>caGraphics::Filled</enum>
+     </property>
+     <property name="lineSize">
+      <number>1</number>
+     </property>
+     <property name="lineColor">
+      <color>
+       <red>255</red>
+       <green>255</green>
+       <blue>255</blue>
+      </color>
+     </property>
+     <property name="form">
+      <enum>caGraphics::Circle</enum>
+     </property>
+    </widget>
+   </widget>
+   <zorder>caframe_2</zorder>
+   <zorder>caframe_4</zorder>
+   <zorder>caframe_3</zorder>
+   <zorder>cagraphics_2</zorder>
+  </widget>
+  <widget class="caGraphics" name="cagraphics">
+   <property name="geometry">
+    <rect>
+     <x>87</x>
+     <y>0</y>
+     <width>27</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="foreground">
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="fillstyle" stdset="0">
+    <enum>caGraphics::Filled</enum>
+   </property>
+   <property name="lineColor">
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="visibility">
+    <enum>caGraphics::IfNotZero</enum>
+   </property>
+   <property name="channel" stdset="0">
+    <string notr="true">$(SYS):M$(M_ID)_ENA</string>
+   </property>
+  </widget>
+  <widget class="caGraphics" name="cagraphics_2">
+   <property name="geometry">
+    <rect>
+     <x>87</x>
+     <y>0</y>
+     <width>27</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="foreground">
+    <color>
+     <red>160</red>
+     <green>160</green>
+     <blue>164</blue>
+    </color>
+   </property>
+   <property name="fillstyle" stdset="0">
+    <enum>caGraphics::Filled</enum>
+   </property>
+   <property name="lineColor">
+    <color>
+     <red>160</red>
+     <green>160</green>
+     <blue>164</blue>
+    </color>
+   </property>
+   <property name="visibility">
+    <enum>caGraphics::IfZero</enum>
+   </property>
+   <property name="channel" stdset="0">
+    <string notr="true">$(SYS):M$(M_ID)_ENA</string>
+   </property>
+  </widget>
+  <zorder>cagraphics_2</zorder>
+  <zorder>cagraphics</zorder>
+  <zorder>catogglebutton_4</zorder>
+  <zorder>caframe</zorder>
+  <zorder>camenu_3</zorder>
+  <zorder>calineedit_8</zorder>
+  <zorder>frame</zorder>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>caMenu</class>
+   <extends>QComboBox</extends>
+   <header>caMenu</header>
+  </customwidget>
+  <customwidget>
+   <class>caChoice</class>
+   <extends>QWidget</extends>
+   <header>caChoice</header>
+  </customwidget>
+  <customwidget>
+   <class>caMessageButton</class>
+   <extends>QPushButton</extends>
+   <header>caMessageButton</header>
+  </customwidget>
+  <customwidget>
+   <class>caToggleButton</class>
+   <extends>QCheckBox</extends>
+   <header>caToggleButton</header>
+  </customwidget>
+  <customwidget>
+   <class>caFrame</class>
+   <extends>QFrame</extends>
+   <header>caFrame</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>caGraphics</class>
+   <extends>QWidget</extends>
+   <header>caGraphics</header>
+  </customwidget>
+  <customwidget>
+   <class>caLed</class>
+   <extends>QWidget</extends>
+   <header>caLed</header>
+  </customwidget>
+  <customwidget>
+   <class>caLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>caLineEdit</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

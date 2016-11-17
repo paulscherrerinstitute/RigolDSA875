@@ -892,7 +892,7 @@
       <string>SYS=$(SYS),M_ID=1</string>
      </property>
      <property name="filename" stdset="0">
-      <string notr="true">SpectrumAnalyzer_marker.ui</string>
+      <string notr="true">RigolDSA875_marker.ui</string>
      </property>
     </widget>
    </widget>
@@ -921,7 +921,7 @@
       <string>SYS=$(SYS),M_ID=2</string>
      </property>
      <property name="filename" stdset="0">
-      <string notr="true">SpectrumAnalyzer_marker.ui</string>
+      <string notr="true">RigolDSA875_marker.ui</string>
      </property>
     </widget>
    </widget>
@@ -950,7 +950,7 @@
       <string>SYS=$(SYS),M_ID=3</string>
      </property>
      <property name="filename" stdset="0">
-      <string notr="true">SpectrumAnalyzer_marker.ui</string>
+      <string notr="true">RigolDSA875_marker.ui</string>
      </property>
     </widget>
    </widget>
@@ -982,7 +982,7 @@
       <string>Errors &amp;&amp; Info</string>
      </property>
      <property name="files">
-      <string>SpectrumAnalyzer_info.ui</string>
+      <string>RigolDSA875_info.ui</string>
      </property>
      <property name="args">
       <string>SYS=$(SYS)</string>

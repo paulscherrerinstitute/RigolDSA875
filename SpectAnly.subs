@@ -15,5 +15,5 @@ pattern {SYS,    PORT,          MARKER_ID }
 {       "$(S)", "$(STRM_PORT)", "1"}
 {       "$(S)", "$(STRM_PORT)", "2"}
 {       "$(S)", "$(STRM_PORT)", "3"}
-{       "$(S)", "$(STRM_PORT)", "4"}
+#{       "$(S)", "$(STRM_PORT)", "4"}
 }
