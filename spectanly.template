@@ -80,7 +80,7 @@ record(ai, "$(SYS):FREQ_OFFSET")
     field(INP, "@dsa875.p gFreq(OFFS) $(PORT)")
     field(EGU, "Hz")
     field(PREC, "0")
-    field(LOPR, "0")
+    field(LOPR, "-100000000000")
     field(HOPR, "100000000000")
 }
 
@@ -90,7 +90,7 @@ record(ao, "$(SYS):FREQ_OFFSET_SP")
     field(OUT, "@dsa875.p sFreq(OFFS) $(PORT)")
     field(EGU, "Hz")
     field(PREC, "0")
-    field(LOPR, "0")
+    field(LOPR, "-100000000000")
     field(HOPR, "100000000000")
 }
 
@@ -136,6 +136,136 @@ record(ao, "$(SYS):FREQ_STOP_SP")
     field(HOPR, "7500000000")
 }
 
+#############
+# Bandwidth settings (RBW, VBW)
+#############
+record(ai, "$(SYS):BAND_RES")
+{
+    field(DTYP, "stream")
+    field(DESC, "Query the resolution bandwidth")
+    field(SCAN, "2 second")
+    field(INP, "@dsa875.p gBand(RES) $(PORT)")
+    field(EGU, "Hz")
+    field(PREC, "0")
+    field(LOPR, "10")
+    field(HOPR, "1000000")
+}
+
+record(ao, "$(SYS):BAND_RES_SP")
+{
+    field(DTYP, "stream")
+    field(DESC, "Set the resolution bandwidth")
+    field(OUT, "@dsa875.p sBand(RES) $(PORT)")
+    field(EGU, "Hz")
+    field(PREC, "0")
+    field(LOPR, "10")
+    field(HOPR, "1000000")
+}
+
+record(ai, "$(SYS):BAND_VID")
+{
+    field(DTYP, "stream")
+    field(DESC, "Query the video bandwidth")
+    field(SCAN, "2 second")
+    field(INP, "@dsa875.p gBand(VID) $(PORT)")
+    field(EGU, "Hz")
+    field(PREC, "0")
+    field(LOPR, "1")
+    field(HOPR, "3000000")
+}
+
+record(ao, "$(SYS):BAND_VID_SP")
+{
+    field(DTYP, "stream")
+    field(DESC, "Set the video bandwidth")
+    field(OUT, "@dsa875.p sBand(VID) $(PORT)")
+    field(EGU, "Hz")
+    field(PREC, "0")
+    field(LOPR, "1")
+    field(HOPR, "3000000")
+}
+
+# In auto mode, the resolution bandwidth changes with the span (non-zero span).
+
+record(bo, "$(SYS):BAND_RES_AUTO_SP")
+{
+    field(DTYP, "stream")
+    field(DESC, "Auto setting mode of RBW")
+    field(OUT, "@dsa875.p sBandA(RES) $(PORT)")
+    field(ZNAM, "Manual mode")
+    field(ONAM, "Auto mode")
+}
+
+record(bi, "$(SYS):BAND_RES_AUTO")
+{
+    field(DTYP, "stream")
+    field(DESC, "Status of Auto setting mode of RBW")
+    field(SCAN, "2 second")
+    field(INP, "@dsa875.p gBandA(RES) $(PORT)")
+    field(ZNAM, "Manual mode")
+    field(ONAM, "Auto mode")
+}
+
+record(bo, "$(SYS):BAND_VID_AUTO_SP")
+{
+    field(DTYP, "stream")
+    field(DESC, "Auto setting mode of VBW")
+    field(OUT, "@dsa875.p sBandA(VID) $(PORT)")
+    field(ZNAM, "Manual mode")
+    field(ONAM, "Auto mode")
+}
+
+record(bi, "$(SYS):BAND_VID_AUTO")
+{
+    field(DTYP, "stream")
+    field(DESC, "Status of Auto setting mode of RBW")
+    field(SCAN, "2 second")
+    field(INP, "@dsa875.p gBandA(VID) $(PORT)")
+    field(ZNAM, "Manual mode")
+    field(ONAM, "Auto mode")
+}
+
+record(ai, "$(SYS):SW_TIME")
+{
+    field(DTYP, "stream")
+    field(DESC, "Query the sweep time")
+    field(SCAN, "2 second")
+    field(INP, "@dsa875.p gSwT() $(PORT)")
+    field(EGU, "s")
+    field(PREC, "6")
+    field(LOPR, "0.00002")
+    field(HOPR, "7500")
+}
+
+record(ao, "$(SYS):SW_TIME_SP")
+{
+    field(DTYP, "stream")
+    field(DESC, "Set the sweep time")
+    field(OUT, "@dsa875.p sSwT() $(PORT)")
+    field(EGU, "s")
+    field(PREC, "6")
+    field(LOPR, "0.00002")
+    field(HOPR, "7500")
+}
+
+record(bo, "$(SYS):SW_TIME_AUTO_SP")
+{
+    field(DTYP, "stream")
+    field(DESC, "Auto setting mode of sweep time")
+    field(OUT, "@dsa875.p sSwTA(VID) $(PORT)")
+    field(ZNAM, "Manual mode")
+    field(ONAM, "Auto mode")
+}
+
+record(bi, "$(SYS):SW_TIME_AUTO")
+{
+    field(DTYP, "stream")
+    field(DESC, "Status of Auto sweep time")
+    field(SCAN, "2 second")
+    field(INP, "@dsa875.p gSwTA(VID) $(PORT)")
+    field(ZNAM, "Manual mode")
+    field(ONAM, "Auto mode")
+}
 ##############
 # Type of X (FREQ) axis
 ##############

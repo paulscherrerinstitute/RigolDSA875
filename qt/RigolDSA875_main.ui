@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1070</width>
-    <height>707</height>
+    <height>845</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -436,7 +436,7 @@
     <property name="geometry">
      <rect>
       <x>660</x>
-      <y>790</y>
+      <y>1020</y>
       <width>100</width>
       <height>22</height>
      </rect>
@@ -452,7 +452,7 @@
     <property name="geometry">
      <rect>
       <x>810</x>
-      <y>790</y>
+      <y>1020</y>
       <width>100</width>
       <height>22</height>
      </rect>
@@ -468,7 +468,7 @@
     <property name="geometry">
      <rect>
       <x>950</x>
-      <y>790</y>
+      <y>1020</y>
       <width>100</width>
       <height>22</height>
      </rect>
@@ -884,8 +884,8 @@
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>341</width>
-       <height>191</height>
+       <width>336</width>
+       <height>186</height>
       </rect>
      </property>
      <property name="macro">
@@ -913,8 +913,8 @@
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>341</width>
-       <height>191</height>
+       <width>336</width>
+       <height>186</height>
       </rect>
      </property>
      <property name="macro">
@@ -942,8 +942,8 @@
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>341</width>
-       <height>191</height>
+       <width>336</width>
+       <height>186</height>
       </rect>
      </property>
      <property name="macro">
@@ -1156,6 +1156,440 @@
      <number>1</number>
     </property>
    </widget>
+   <widget class="QGroupBox" name="groupBox_10">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>704</y>
+      <width>1051</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Bandwidth settings</string>
+    </property>
+    <widget class="caLineEdit" name="calineedit_12">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>70</y>
+       <width>170</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):BAND_VID</string>
+     </property>
+     <property name="unitsEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="caTextEntry" name="catextentry_10">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>70</y>
+       <width>31</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):BAND_VID.EGU</string>
+     </property>
+    </widget>
+    <widget class="caTextEntry" name="catextentry_11">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>70</y>
+       <width>121</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):BAND_VID_SP</string>
+     </property>
+    </widget>
+    <widget class="caLineEdit" name="calineedit_14">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>40</y>
+       <width>170</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):BAND_RES</string>
+     </property>
+     <property name="unitsEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>15</y>
+       <width>221</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <italic>true</italic>
+      </font>
+     </property>
+     <property name="text">
+      <string>Use Automatic/Manual settings</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_14">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>43</y>
+       <width>150</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Resolution Bandwidth</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="caTextEntry" name="catextentry_12">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>40</y>
+       <width>31</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):BAND_RES.EGU</string>
+     </property>
+    </widget>
+    <widget class="caTextEntry" name="catextentry_13">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>40</y>
+       <width>121</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):BAND_RES_SP</string>
+     </property>
+    </widget>
+    <widget class="caLineEdit" name="calineedit_15">
+     <property name="geometry">
+      <rect>
+       <x>830</x>
+       <y>40</y>
+       <width>180</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):BAND_RES_AUTO</string>
+     </property>
+     <property name="unitsEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_15">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>73</y>
+       <width>150</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Video Bandwidth</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="caLineEdit" name="calineedit_16">
+     <property name="geometry">
+      <rect>
+       <x>830</x>
+       <y>70</y>
+       <width>180</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):BAND_VID_AUTO</string>
+     </property>
+     <property name="unitsEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="caTextEntry" name="catextentry_14">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>100</y>
+       <width>121</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):SW_TIME_SP</string>
+     </property>
+    </widget>
+    <widget class="caLineEdit" name="calineedit_17">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>100</y>
+       <width>170</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):SW_TIME</string>
+     </property>
+     <property name="unitsEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="caTextEntry" name="catextentry_15">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>100</y>
+       <width>31</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):SW_TIME.EGU</string>
+     </property>
+    </widget>
+    <widget class="caMessageButton" name="camessagebutton_7">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>37</y>
+       <width>100</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):BAND_RES_AUTO_SP</string>
+     </property>
+     <property name="label">
+      <string notr="true">Auto</string>
+     </property>
+     <property name="pressMessage">
+      <string notr="true">1</string>
+     </property>
+     <property name="colorMode">
+      <enum>caMessageButton::Default</enum>
+     </property>
+    </widget>
+    <widget class="caMessageButton" name="camessagebutton_8">
+     <property name="geometry">
+      <rect>
+       <x>713</x>
+       <y>37</y>
+       <width>100</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Manual</string>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):BAND_RES_AUTO_SP</string>
+     </property>
+     <property name="label">
+      <string notr="true">Auto</string>
+     </property>
+     <property name="pressMessage">
+      <string notr="true">0</string>
+     </property>
+     <property name="colorMode">
+      <enum>caMessageButton::Default</enum>
+     </property>
+    </widget>
+    <widget class="caMessageButton" name="camessagebutton_9">
+     <property name="geometry">
+      <rect>
+       <x>713</x>
+       <y>68</y>
+       <width>100</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Manual</string>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):BAND_VID_AUTO_SP</string>
+     </property>
+     <property name="label">
+      <string notr="true">Manual</string>
+     </property>
+     <property name="pressMessage">
+      <string notr="true">0</string>
+     </property>
+     <property name="colorMode">
+      <enum>caMessageButton::Default</enum>
+     </property>
+    </widget>
+    <widget class="caMessageButton" name="camessagebutton_10">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>68</y>
+       <width>100</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):BAND_VID_AUTO_SP</string>
+     </property>
+     <property name="label">
+      <string notr="true">Auto</string>
+     </property>
+     <property name="pressMessage">
+      <string notr="true">1</string>
+     </property>
+     <property name="colorMode">
+      <enum>caMessageButton::Default</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_16">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>103</y>
+       <width>150</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Sweep Time</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="caMessageButton" name="camessagebutton_11">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>99</y>
+       <width>100</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):SW_TIME_AUTO_SP</string>
+     </property>
+     <property name="label">
+      <string notr="true">Auto</string>
+     </property>
+     <property name="pressMessage">
+      <string notr="true">1</string>
+     </property>
+     <property name="colorMode">
+      <enum>caMessageButton::Default</enum>
+     </property>
+    </widget>
+    <widget class="caMessageButton" name="camessagebutton_12">
+     <property name="geometry">
+      <rect>
+       <x>713</x>
+       <y>99</y>
+       <width>100</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Manual</string>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):SW_TIME_AUTO_SP</string>
+     </property>
+     <property name="label">
+      <string notr="true">Manual</string>
+     </property>
+     <property name="pressMessage">
+      <string notr="true">0</string>
+     </property>
+     <property name="colorMode">
+      <enum>caMessageButton::Default</enum>
+     </property>
+    </widget>
+    <widget class="caLineEdit" name="calineedit_18">
+     <property name="geometry">
+      <rect>
+       <x>830</x>
+       <y>100</y>
+       <width>180</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="channel" stdset="0">
+      <string notr="true">$(SYS):SW_TIME_AUTO</string>
+     </property>
+     <property name="unitsEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <zorder>catextentry_15</zorder>
+    <zorder>calineedit_12</zorder>
+    <zorder>catextentry_10</zorder>
+    <zorder>catextentry_11</zorder>
+    <zorder>calineedit_14</zorder>
+    <zorder>label_4</zorder>
+    <zorder>label_14</zorder>
+    <zorder>catextentry_12</zorder>
+    <zorder>catextentry_13</zorder>
+    <zorder>calineedit_15</zorder>
+    <zorder>label_15</zorder>
+    <zorder>calineedit_16</zorder>
+    <zorder>catextentry_14</zorder>
+    <zorder>calineedit_17</zorder>
+    <zorder>camessagebutton_7</zorder>
+    <zorder>camessagebutton_8</zorder>
+    <zorder>camessagebutton_9</zorder>
+    <zorder>camessagebutton_10</zorder>
+    <zorder>label_16</zorder>
+    <zorder>camessagebutton_11</zorder>
+    <zorder>camessagebutton_12</zorder>
+    <zorder>calineedit_18</zorder>
+   </widget>
    <zorder>cacartesianplot</zorder>
    <zorder>camessagebutton_5</zorder>
    <zorder>cacalc</zorder>
@@ -1172,10 +1606,10 @@
    <zorder>groupBox_9</zorder>
    <zorder>calabel</zorder>
    <zorder>groupBox_7</zorder>
-   <zorder>caframe_4</zorder>
    <zorder>cacalc_2</zorder>
    <zorder>cacalc_3</zorder>
    <zorder>cacalc_4</zorder>
+   <zorder>groupBox_10</zorder>
   </widget>
  </widget>
  <customwidgets>

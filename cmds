@@ -35,6 +35,9 @@ I have tired to use peaks table which can be read from the device using:
 :TRAC:MATH:PEAK:TABL:STAT 1
 :TRAC:MATH:PEAK:DATA?
 
+7) Bandwidth
+RBW, VBW and SWE (sweep time) commands added
+
 This approach should provide user with up to 10 peaks on trace 1 without any configuration. However it showed up that RIGOL DSA875 has a possible problems that in majority cases this command freezes the communication over LAN.
 
 Second approach is to support markers (4 are provided)
