@@ -21,14 +21,51 @@ sSpanPred{
 
 gFreq{
 	out ":SENS:FREQ:\$1?";
-	in "%u";
+	in "%d";
 }
 
 sFreq{
-	out ":SENS:FREQ:\$1 %u";
-	@init {out ":SENS:FREQ:\$1?"; in "%u";}
+	out ":SENS:FREQ:\$1 %d";
+	@init {out ":SENS:FREQ:\$1?"; in "%d";}
 }
 
+gBand{
+	out ":SENS:BAND:\$1?";
+	in "%u";
+}
+
+sBand{
+	out ":SENS:BAND:\$1 %u";
+	@init {out ":SENS:BAND:\$1?"; in "%u";}
+}
+
+gBandA{
+	out ":SENS:BAND:\$1:AUTO?";
+	in "%{0|1}";
+}
+
+sBandA{
+	out ":SENS:BAND:\$1:AUTO %{0|1}";
+}
+
+gSwT{
+	out ":SENS:SWE:TIME?";
+	in "%f";
+}
+
+sSwT{
+	out ":SENS:SWE:TIME %f";
+	@init {out ":SENS:SWE:TIME?"; in "%f";}
+}
+
+gSwTA{
+	out ":SENS:SWE:TIME:AUTO?";
+	in "%{0|1}";
+}
+
+sSwTA{
+	out ":SENS:SWE:TIME:AUTO %{0|1}";
+}
 sXTyp{
 	out ":DISP:WIN:TRAC:X:SCAL:SPAC %{LIN|LOG}";
 }
