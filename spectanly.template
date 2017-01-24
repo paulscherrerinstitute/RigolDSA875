@@ -1,3 +1,18 @@
+# Macros:
+# SYS       ->  prefix for all records
+# PORT      ->  configured stream device (asyn) port name
+# COMM_OFF  ->  disable(1) or enable(0) periodic communication with the device
+# 
+
+record(bi, "$(SYS):COMM_OFF")
+{
+  field(DESC, "Disables scan records")
+  field(ZNAM, "Enable")
+  field(ONAM, "Disable")
+  field(VAL,  "$(COMM_OFF=0)")
+}
+
+
 record(bo, "$(SYS):PRESET")
 {
     field(DTYP, "stream")
@@ -16,6 +31,8 @@ record(ai, "$(SYS):SPAN")
     field(INP, "@dsa875.p gFreq(SPAN) $(PORT)")
     field(EGU, "Hz")
     field(PREC, "0")
+    field(SDIS, "$(SYS):COMM_OFF")
+    field(DISS, "INVALID")
 }
 
 record(ao, "$(SYS):SPAN_SP")
@@ -61,6 +78,8 @@ record(ai, "$(SYS):FREQ_CENTER")
     field(PREC, "0")
     field(LOPR, "0")
     field(HOPR, "7500000000")
+    field(SDIS, "$(SYS):COMM_OFF")
+    field(DISS, "INVALID")
 }
 
 record(ao, "$(SYS):FREQ_CENTER_SP")
@@ -82,6 +101,8 @@ record(ai, "$(SYS):FREQ_OFFSET")
     field(PREC, "0")
     field(LOPR, "-100000000000")
     field(HOPR, "100000000000")
+    field(SDIS, "$(SYS):COMM_OFF")
+    field(DISS, "INVALID")
 }
 
 record(ao, "$(SYS):FREQ_OFFSET_SP")
@@ -103,6 +124,8 @@ record(ai, "$(SYS):FREQ_START")
     field(PREC, "0")
     field(LOPR, "0")
     field(HOPR, "7500000000")
+    field(SDIS, "$(SYS):COMM_OFF")
+    field(DISS, "INVALID")
 }
 
 record(ao, "$(SYS):FREQ_START_SP")
@@ -124,6 +147,8 @@ record(ai, "$(SYS):FREQ_STOP")
     field(PREC, "0")
     field(LOPR, "0")
     field(HOPR, "7500000000")
+    field(SDIS, "$(SYS):COMM_OFF")
+    field(DISS, "INVALID")
 }
 
 record(ao, "$(SYS):FREQ_STOP_SP")
@@ -149,6 +174,8 @@ record(ai, "$(SYS):BAND_RES")
     field(PREC, "0")
     field(LOPR, "10")
     field(HOPR, "1000000")
+    field(SDIS, "$(SYS):COMM_OFF")
+    field(DISS, "INVALID")
 }
 
 record(ao, "$(SYS):BAND_RES_SP")
@@ -172,6 +199,8 @@ record(ai, "$(SYS):BAND_VID")
     field(PREC, "0")
     field(LOPR, "1")
     field(HOPR, "3000000")
+    field(SDIS, "$(SYS):COMM_OFF")
+    field(DISS, "INVALID")
 }
 
 record(ao, "$(SYS):BAND_VID_SP")
@@ -204,6 +233,8 @@ record(bi, "$(SYS):BAND_RES_AUTO")
     field(INP, "@dsa875.p gBandA(RES) $(PORT)")
     field(ZNAM, "Manual mode")
     field(ONAM, "Auto mode")
+    field(SDIS, "$(SYS):COMM_OFF")
+    field(DISS, "INVALID")
 }
 
 record(bo, "$(SYS):BAND_VID_AUTO_SP")
@@ -223,6 +254,8 @@ record(bi, "$(SYS):BAND_VID_AUTO")
     field(INP, "@dsa875.p gBandA(VID) $(PORT)")
     field(ZNAM, "Manual mode")
     field(ONAM, "Auto mode")
+    field(SDIS, "$(SYS):COMM_OFF")
+    field(DISS, "INVALID")
 }
 
 record(ai, "$(SYS):SW_TIME")
@@ -235,6 +268,8 @@ record(ai, "$(SYS):SW_TIME")
     field(PREC, "6")
     field(LOPR, "0.00002")
     field(HOPR, "7500")
+    field(SDIS, "$(SYS):COMM_OFF")
+    field(DISS, "INVALID")
 }
 
 record(ao, "$(SYS):SW_TIME_SP")
@@ -265,6 +300,8 @@ record(bi, "$(SYS):SW_TIME_AUTO")
     field(INP, "@dsa875.p gSwTA(VID) $(PORT)")
     field(ZNAM, "Manual mode")
     field(ONAM, "Auto mode")
+    field(SDIS, "$(SYS):COMM_OFF")
+    field(DISS, "INVALID")
 }
 ##############
 # Type of X (FREQ) axis
@@ -276,6 +313,8 @@ record(bi, "$(SYS):X_TYPE")
     field(INP, "@dsa875.p gXTyp() $(PORT)")
     field(ZNAM, "Linear")
     field(ONAM, "Log10")
+    field(SDIS, "$(SYS):COMM_OFF")
+    field(DISS, "INVALID")
 }
 
 record(bo, "$(SYS):X_TYPE_SP")
@@ -307,6 +346,8 @@ record(mbbiDirect, "$(SYS):STB_STS")
     field(INP, "@dsa875.p gSTB() $(PORT)")
     field(PINI, "1")
     field(FLNK, "$(SYS):ERR_IN_Q")
+    field(SDIS, "$(SYS):COMM_OFF")
+    field(DISS, "INVALID")
 }
 
 # 2nd bit of STB register indicates that errors are in the queue

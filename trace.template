@@ -24,13 +24,16 @@ record(mbbi, "$(SYS):T$(TRACE_ID)_MODE")
     field(FVST, "Video Avg")
     field(SXST, "Power Avg")
     field(FLNK, "$(SYS):T$(TRACE_ID)_PULL_")
+    field(SDIS, "$(SYS):COMM_OFF")
+    field(DISS, "INVALID")
 }
 
-# When "BLANK" do not pull data
+# When "BLANK" or communication disabled do not pull data
 record(calc, "$(SYS):T$(TRACE_ID)_PULL_")
 {
-    field(CALC, "A==0")
+    field(CALC, "A==0 || B==1")
     field(INPA, "$(SYS):T$(TRACE_ID)_MODE")
+    field(INPB, "$(SYS):COMM_OFF CP")
 }
 
 record(waveform, "$(SYS):T$(TRACE_ID)_AMP")
