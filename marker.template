@@ -13,13 +13,23 @@ record(bo, "$(SYS):M$(MARKER_ID)_ENA_SP")
 }
 
 # To reduce number of queries do one call for enabled and continuous status check
-record(bi, "$(SYS):M$(MARKER_ID)_ENA")
+record(bi, "$(SYS):M$(MARKER_ID)_ENA_")
 {
     field(DTYP, "stream")
     field(SCAN, "2 second")
     field(INP, "@dsa875.p gMsts($(MARKER_ID),$(SYS):M$(MARKER_ID)_CONT) $(PORT)")
     field(ZNAM, "Disabled")
     field(ONAM, "Enabled")
+    field(SDIS, "$(SYS):COMM_OFF")
+    field(DISS, "INVALID")
+    field(FLNK, "$(SYS):M$(MARKER_ID)_ENA")
+}
+
+record(calc, "$(SYS):M$(MARKER_ID)_ENA")
+{
+    field(INPA, "$(SYS):M$(MARKER_ID)_ENA_")
+    field(INPB, "$(SYS):COMM_OFF CP")
+    field(CALC, "A==1 && B==0")
 }
 
 
@@ -83,6 +93,8 @@ record(mbbi, "$(SYS):M$(MARKER_ID)_TRACE")
     field(ONST, "Trace 2")
     field(TWST, "Trace 3")
     field(THST, "Trace 4")
+    field(SDIS, "$(SYS):COMM_OFF")
+    field(DISS, "INVALID")
 }
 
 

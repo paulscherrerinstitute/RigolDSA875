@@ -29,7 +29,7 @@
     <string>Expert</string>
    </property>
    <property name="text">
-    <string>$(SYS)  -  Errors &amp;&amp; Info</string>
+    <string>$(SYS)  -  Errors &amp; Info</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -137,7 +137,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Read Next Error</string>
+     <string>Get Next Error</string>
     </property>
     <property name="channel" stdset="0">
      <string notr="true">$(SYS):ERR_MSG.PROC</string>

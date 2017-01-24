@@ -1,6 +1,6 @@
 file spectanly.template {
-pattern {SYS,    PORT}
-{       "$(S)", "$(STRM_PORT)"}
+pattern {SYS,    PORT,          COMM_OFF }
+{       "$(S)", "$(STRM_PORT)",  "0"     }
 }
 
 file trace.template {
