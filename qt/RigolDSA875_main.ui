@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1070</width>
+    <width>1064</width>
     <height>912</height>
    </rect>
   </property>
@@ -176,7 +176,7 @@
     <property name="geometry">
      <rect>
       <x>870</x>
-      <y>320</y>
+      <y>310</y>
       <width>191</width>
       <height>31</height>
      </rect>
@@ -1055,7 +1055,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Preset</string>
+      <string>Reset device</string>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(SYS):PRESET</string>
@@ -1423,13 +1423,13 @@
       </rect>
      </property>
      <property name="text">
-      <string>Auto</string>
+      <string>Manual</string>
      </property>
      <property name="channel" stdset="0">
       <string notr="true">$(SYS):BAND_RES_AUTO_SP</string>
      </property>
      <property name="label">
-      <string notr="true">Auto</string>
+      <string notr="true">Manual</string>
      </property>
      <property name="pressMessage">
       <string notr="true">0</string>
@@ -1650,6 +1650,28 @@
       <number>1</number>
      </property>
     </widget>
+    <widget class="caShellCommand" name="cashellcommand">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>20</y>
+       <width>411</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="label">
+      <string notr="true">Select preset</string>
+     </property>
+     <property name="labels">
+      <string>Center: 2.9988 GHz, Span: 20 kHz, RBW&amp;&amp;VBW: 300 Hz;Center: 2.9988 GHz, Span: 100 kHz, RBW&amp;&amp;VBW: 1 kHz;Center: 2.9988 GHz, Span: 1 MHz, RBW&amp;&amp;VBW: 10 kHz;Center: 2.9988 GHz, Span: 20 MHz, RBW&amp;&amp;VBW: 50 kHz</string>
+     </property>
+     <property name="files">
+      <string>caput;caput;caput;caput</string>
+     </property>
+     <property name="args">
+      <string>$(SYS):FREQ_CENTER_SP 2998800000 $(SYS):SPAN_SP 20000 $(SYS):BAND_RES_SP 300 $(SYS):BAND_VID_SP 300;$(SYS):FREQ_CENTER_SP 2998800000 $(SYS):SPAN_SP 100000 $(SYS):BAND_RES_SP 1000 $(SYS):BAND_VID_SP 1000;$(SYS):FREQ_CENTER_SP 2998800000 $(SYS):SPAN_SP 1000000 $(SYS):BAND_RES_SP 10000 $(SYS):BAND_VID_SP 10000;$(SYS):FREQ_CENTER_SP 2998800000 $(SYS):SPAN_SP 20000000 $(SYS):BAND_RES_SP 50000 $(SYS):BAND_VID_SP 50000;5;6;7;8;9;10;11;12;13;14;15;16</string>
+     </property>
+    </widget>
    </widget>
    <zorder>cacartesianplot</zorder>
    <zorder>camessagebutton_5</zorder>
@@ -1689,6 +1711,11 @@
    <class>caRelatedDisplay</class>
    <extends>QWidget</extends>
    <header>caRelatedDisplay</header>
+  </customwidget>
+  <customwidget>
+   <class>caShellCommand</class>
+   <extends>QWidget</extends>
+   <header>caShellCommand</header>
   </customwidget>
   <customwidget>
    <class>caTextEntry</class>
