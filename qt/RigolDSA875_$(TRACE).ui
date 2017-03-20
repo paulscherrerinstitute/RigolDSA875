@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1067</width>
+    <height>323</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="caCartesianPlot" name="cacartesianplot">
+   <property name="geometry">
+    <rect>
+     <x>5</x>
+     <y>5</y>
+     <width>851</width>
+     <height>311</height>
+    </rect>
+   </property>
+   <property name="TitleX">
+    <string notr="true">frequency / Hz</string>
+   </property>
+   <property name="TitleY">
+    <string notr="true">power /dB</string>
+   </property>
+   <property name="channels_1" stdset="0">
+    <string>$(SYS):T1_FREQ;$(SYS):T1_AMP</string>
+   </property>
+   <property name="Style_1">
+    <enum>caCartesianPlot::ThinLines</enum>
+   </property>
+   <property name="color_1">
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="channels_2" stdset="0">
+    <string>$(SYS):T2_FREQ;$(SYS):T2_AMP</string>
+   </property>
+   <property name="Style_2">
+    <enum>caCartesianPlot::ThinLines</enum>
+   </property>
+   <property name="color_2">
+    <color>
+     <red>255</red>
+     <green>0</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="channels_3" stdset="0">
+    <string>$(SYS):T3_FREQ;$(SYS):T3_AMP</string>
+   </property>
+   <property name="Style_3">
+    <enum>caCartesianPlot::ThinLines</enum>
+   </property>
+   <property name="color_3">
+    <color>
+     <red>0</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="channels_4" stdset="0">
+    <string>$(SYS):M1_FREQ;$(SYS):M1_AMP</string>
+   </property>
+   <property name="Style_4">
+    <enum>caCartesianPlot::Dots</enum>
+   </property>
+   <property name="symbol_4">
+    <enum>caCartesianPlot::Ellipse</enum>
+   </property>
+   <property name="color_4">
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="channels_5" stdset="0">
+    <string>$(SYS):M2_FREQ;$(SYS):M2_AMP</string>
+   </property>
+   <property name="Style_5">
+    <enum>caCartesianPlot::NoCurve</enum>
+   </property>
+   <property name="symbol_5">
+    <enum>caCartesianPlot::Triangle</enum>
+   </property>
+   <property name="color_5">
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="channels_6" stdset="0">
+    <string>$(SYS):M3_FREQ;$(SYS):M3_AMP</string>
+   </property>
+   <property name="Style_6">
+    <enum>caCartesianPlot::Dots</enum>
+   </property>
+   <property name="symbol_6">
+    <enum>caCartesianPlot::XCross</enum>
+   </property>
+   <property name="color_6">
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="countNumOrChannel" stdset="0">
+    <string notr="true"/>
+   </property>
+   <property name="triggerChannel" stdset="0">
+    <string notr="true"/>
+   </property>
+   <property name="eraseChannel" stdset="0">
+    <string notr="true">$(SYS):GUI_CLEAR_</string>
+   </property>
+   <property name="eraseMode">
+    <enum>caCartesianPlot::ifnotzero</enum>
+   </property>
+   <property name="foreground">
+    <color>
+     <red>0</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="background">
+    <color>
+     <red>0</red>
+     <green>0</green>
+     <blue>0</blue>
+    </color>
+   </property>
+   <property name="scaleColor">
+    <color>
+     <red>255</red>
+     <green>255</green>
+     <blue>255</blue>
+    </color>
+   </property>
+   <property name="gridColor">
+    <color>
+     <red>178</red>
+     <green>178</green>
+     <blue>178</blue>
+    </color>
+   </property>
+   <property name="XaxisScaling" stdset="0">
+    <enum>caCartesianPlot::Auto</enum>
+   </property>
+   <property name="YaxisScaling" stdset="0">
+    <enum>caCartesianPlot::Auto</enum>
+   </property>
+   <property name="XaxisEnabled">
+    <bool>true</bool>
+   </property>
+   <property name="YaxisEnabled">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>865</x>
+     <y>5</y>
+     <width>191</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Trace 1</string>
+   </property>
+   <widget class="caMenu" name="camenu">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(SYS):T1_MODE_SP</string>
+    </property>
+   </widget>
+   <widget class="caGraphics" name="cagraphics_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>20</y>
+      <width>10</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="foreground">
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="fillstyle" stdset="0">
+     <enum>caGraphics::Filled</enum>
+    </property>
+    <property name="lineSize">
+     <number>1</number>
+    </property>
+    <property name="visibility">
+     <enum>caGraphics::StaticV</enum>
+    </property>
+    <property name="visibilityCalc">
+     <string notr="true"/>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <widget class="caLineEdit" name="calineedit_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>161</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(SYS):T1_MODE</string>
+    </property>
+    <property name="unitsEnabled">
+     <bool>false</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_5">
+   <property name="geometry">
+    <rect>
+     <x>865</x>
+     <y>185</y>
+     <width>191</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Trace 3</string>
+   </property>
+   <widget class="caMenu" name="camenu_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(SYS):T3_MODE_SP</string>
+    </property>
+   </widget>
+   <widget class="caGraphics" name="cagraphics_4">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>20</y>
+      <width>10</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="foreground">
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+    </property>
+    <property name="fillstyle" stdset="0">
+     <enum>caGraphics::Filled</enum>
+    </property>
+    <property name="lineSize">
+     <number>1</number>
+    </property>
+    <property name="visibility">
+     <enum>caGraphics::StaticV</enum>
+    </property>
+    <property name="visibilityCalc">
+     <string notr="true"/>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <widget class="caLineEdit" name="calineedit_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>161</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(SYS):T3_MODE</string>
+    </property>
+    <property name="unitsEnabled">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_4">
+   <property name="geometry">
+    <rect>
+     <x>865</x>
+     <y>95</y>
+     <width>191</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Trace 2</string>
+   </property>
+   <widget class="caMenu" name="camenu_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(SYS):T2_MODE_SP</string>
+    </property>
+   </widget>
+   <widget class="caGraphics" name="cagraphics_3">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>20</y>
+      <width>10</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="foreground">
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>255</blue>
+     </color>
+    </property>
+    <property name="fillstyle" stdset="0">
+     <enum>caGraphics::Filled</enum>
+    </property>
+    <property name="lineSize">
+     <number>1</number>
+    </property>
+    <property name="visibility">
+     <enum>caGraphics::StaticV</enum>
+    </property>
+    <property name="visibilityCalc">
+     <string notr="true"/>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <widget class="caLineEdit" name="calineedit_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>161</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="channel" stdset="0">
+     <string notr="true">$(SYS):T2_MODE</string>
+    </property>
+    <property name="unitsEnabled">
+     <bool>false</bool>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>caMenu</class>
+   <extends>QComboBox</extends>
+   <header>caMenu</header>
+  </customwidget>
+  <customwidget>
+   <class>caGraphics</class>
+   <extends>QWidget</extends>
+   <header>caGraphics</header>
+  </customwidget>
+  <customwidget>
+   <class>caLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>caLineEdit</header>
+  </customwidget>
+  <customwidget>
+   <class>caCartesianPlot</class>
+   <extends>QFrame</extends>
+   <header>caCartesianPlot</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
